@@ -39,10 +39,10 @@ export default function IntroSection() {
                         itemProp="headline"
                     >
                         <span className="block mb-2 bg-gradient-to-r from-purple-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
-                            Problems for Islamic Teachers Online
+                            Why You Can't Reach Your Potential
                         </span>
                         <span className="text-2xl sm:text-3xl font-normal block bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
-                            6 Things Stopping Your Teaching Growth
+                            6 Things Stopping You From Reaching Your Audience
                         </span>
                     </motion.h1>
 
@@ -51,8 +51,8 @@ export default function IntroSection() {
                         variants={itemVariants}
                         transition={{ delay: 0.3 }}
                     >
-                        <span className="font-bold text-rose-500">MOSTLY</span> posting <span className="font-bold">Important Program Details</span> on <span className="font-bold">Social Media</span> makes it hard for students to find <span className="font-semibold text-purple-600 dark:text-purple-300">what they need</span>.
-                        This problem is <span className="font-bold text-rose-500">limit your students</span> and <span className="font-bold text-amber-500">stopping your success</span>.
+                        <span className="font-bold text-rose-500">ONLY</span> posting <span className="font-bold">Important Program Details</span> on <span className="font-bold">Social Media</span> makes it hard for students to find <span className="font-semibold text-purple-600 dark:text-purple-300">what they need</span>.
+                        This problem is <span className="font-bold text-rose-500">not getting you new students</span> and <span className="font-bold text-amber-500">slowing your success</span>.
                     </motion.p>
                 </div>
 
@@ -66,16 +66,16 @@ export default function IntroSection() {
                     {[
                         {
                             icon: BookOpen,
-                            title: "Students Don't Know What You Teach",
-                            description: "They can't see your <strong class='text-purple-600 dark:text-purple-400'>special skills</strong>",
+                            title: "Don't Know How You Teach",
+                            description: "They can't see what makes your classes <strong class='text-purple-600 dark:text-purple-400'>special</strong>",
                             color: "bg-gradient-to-br from-purple-500 to-indigo-500",
                             border: "border-l-purple-500",
                             numColor: "bg-purple-500"
                         },
                         {
                             icon: Award,
-                            title: "Your Qualifications Are Hidden",
-                            description: "Students can't find your <strong class='text-indigo-600 dark:text-indigo-300'>teaching certificates</strong>",
+                            title: "Hard time building trust",
+                            description: "Students have a hard time finding <strong class='text-indigo-600 dark:text-indigo-300'>teaching certificates</strong>",
                             color: "bg-gradient-to-br from-indigo-500 to-blue-500",
                             border: "border-l-indigo-500",
                             numColor: "bg-indigo-500"
@@ -90,7 +90,7 @@ export default function IntroSection() {
                         },
                         {
                             icon: Calendar,
-                            title: "Students Can't See Your Time",
+                            title: "Don't Know When You Teach",
                             description: "They leave when they don't know <strong class='text-cyan-600 dark:text-cyan-300'>when you teach</strong>",
                             color: "bg-gradient-to-br from-cyan-500 to-teal-500",
                             border: "border-l-cyan-500",
@@ -165,13 +165,13 @@ export default function IntroSection() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.4 }}
                     >
-                        Change these problems into <span className="font-bold text-indigo-600 dark:text-indigo-400">good things</span> with your own website that:
+                        Start <span className="font-bold text-indigo-600 dark:text-indigo-400">speeding up your success</span> with your own website that:
                     </motion.p>
 
                     <div className="flex flex-wrap justify-center gap-4 mt-6">
                         {[
                             { icon: Zap, text: "Answers frequently asked questions anytime" },
-                            { icon: Shield, text: "Builds your professional presence" },
+                            { icon: Shield, text: "Lets people know your program is the best option" },
                             { icon: ArrowUpRight, text: "Increases the rate of visitors into students" },
                             { icon: HeartHandshake, text: "Makes interactions more meaningful and stronger" }
                         ].map((item, idx) => {

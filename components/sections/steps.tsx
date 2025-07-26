@@ -234,7 +234,7 @@ export default function StepsSection() {
                     <ProcessCard
                         number={10}
                         title="FAQ Section"
-                        description="We anticipate and answer <strong class='text-amber-600 dark:text-amber-400'>all potential questions</strong>"
+                        description="We anticipate and answer <strong class='text-amber-600 dark:text-amber-400'>a majority of potential questions</strong>"
                         benefit="Saves you time on repeated inquiries"
                         icon="HelpCircle"
                         delay={1.0}
@@ -262,7 +262,7 @@ export default function StepsSection() {
                             className="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 p-6 rounded-2xl border border-rose-200 dark:border-rose-800"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1.4 }}
+                            transition={{ delay: .5 }}
                         >
                             <div className="text-rose-600 dark:text-rose-400 font-bold text-xl mb-4">Without Professional Guidance</div>
                             <ul className="space-y-3 text-left text-gray-700 dark:text-gray-300">
@@ -294,7 +294,7 @@ export default function StepsSection() {
                             className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-teal-200 dark:border-teal-800"
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1.6 }}
+                            transition={{ delay: 1 }}
                             viewport={{ once: true }}
                         >
                             <div className="text-teal-600 dark:text-teal-400 font-bold text-xl mb-4">With Our Professional Process</div>

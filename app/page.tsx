@@ -75,6 +75,22 @@ export default function Home() {
               {/* All sections will be perfectly centered */}
               <IntroSection />
               <StepsSection />
+              <motion.section
+                className="w-full"
+                variants={itemVariants}
+                aria-label="Demo video"
+              >
+                <div className="relative w-full aspect-video rounded-xl shadow-xl overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
+                    title="Website Process Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                    frameBorder="0"
+                  />
+                </div>
+              </motion.section>
               <WorkSection />
               <FinalSection />
             </motion.main>

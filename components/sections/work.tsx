@@ -2,7 +2,7 @@ import {
     Layout, CheckCircle, ExternalLink, MessageCircle, Plus
 } from 'lucide-react';
 import { motion } from 'framer-motion'
-import DemoScreenshot from '@/lib/demo-screenshot.png'
+import DemoScreenshot from '@/lib/demo-screenshot-new.png'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -139,22 +139,22 @@ export default function WorkSection() {
                             </a>
 
                             <Link
-                                href={'#contact-section'}
-                                className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+                                href="#contact-section"
+                                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 h-11 px-6 py-3 hover:text-emerald-400 dark:hover:text-emerald-300"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     const target = document.querySelector('#contact-section');
                                     if (target) {
-                                        target.scrollIntoView({ behavior: 'smooth' });
+                                        target.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
                                     }
                                 }}
+                                aria-label="Scroll to contact section"
                             >
-                                <a
-                                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 h-11 px-6 py-3"
-                                >
-                                    <MessageCircle className="cursor-pointer w-4 h-4 mr-2" />
-                                    Request Your Own
-                                </a>
+                                <MessageCircle className="w-4 h-4 mr-2" />
+                                Request Your Own
                             </Link>
                         </div>
                     </div>

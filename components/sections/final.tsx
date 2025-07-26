@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button';
-import { MessageCircle, Calendar } from 'lucide-react';
+import { MessageCircle, Calendar, ChevronDown, Mail } from 'lucide-react';
 import {
     XCircle, CheckCircle, DollarSign, Clock, AlertCircle, Turtle,
     ShieldOff, Headphones, Zap, Search, PiggyBank, Gauge, Code,
@@ -69,7 +69,7 @@ export default function FinalSection() {
                         Is Social Media Really Enough for Your Teaching?
                     </span>
                     <span className="text-lg font-normal text-gray-600 dark:text-gray-300">
-                        Most Islamic Educators Use Only Social Media - But Is This Holding You Back?
+                        Most Teachers Use <span className='font-bold'>Only</span> Social Media To Share Important Program Details - <span className='font-bold'>But This Will</span> <span className='font-bold text-amber-500'>Hold You Back</span>
                     </span>
                 </motion.h2>
 
@@ -273,16 +273,20 @@ export default function FinalSection() {
                                 </Button>
                             </a>
 
-                            {/* Email Message Button */}
-                            <a
-                                href="mailto:contact@example.com?subject=Inquiry%20About%20Your%20Services"
-                                className="flex-1"
-                            >
-                                <Button className="cursor-pointer w-full bg-[#10a148] hover:bg-[#0d8a3d] text-white px-6 py-5 text-md font-semibold transition-all flex items-center justify-center gap-2">
-                                    <MessageCircle className="w-5 h-5" />
-                                    Email Us
-                                </Button>
-                            </a>
+                            {/* Email Label with Dropdown Indicator */}
+                            <div className="flex-1 flex flex-col">
+                                <div className="cursor-pointer w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 px-6 py-5 text-md font-semibold transition-all flex justify-center">
+                                    <div className="flex items-center gap-2"> {/* Inner flex container */}
+                                        <Mail className="w-5 h-5" />
+                                        <span>Email Us</span>
+                                        <ChevronDown className="w-4 h-4" />
+                                    </div>
+                                </div>
+                                {/* Email Text Display */}
+                                <div className="text-center mt-2 text-gray-600 dark:text-gray-200 font-bold">
+                                    noelramadan06@gmail.com
+                                </div>
+                            </div>
                         </div>
 
                         {/* Vertical Divider - Center Aligned */}
