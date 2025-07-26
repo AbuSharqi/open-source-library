@@ -63,7 +63,7 @@ export default function Home() {
       )}
       <>
         {confirmPage === false && (
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
             <Navbar />
 
             <motion.main
