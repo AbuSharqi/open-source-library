@@ -54,7 +54,7 @@ const icons = {
 export default function FinalSection() {
     return (
         <motion.section
-            className="w-full rounded-xl shadow-xl p-8 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700"
+            className="mx-auto w-full rounded-xl shadow-xl p-8 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700"
             variants={itemVariants}
             aria-labelledby="social-media-heading"
         >

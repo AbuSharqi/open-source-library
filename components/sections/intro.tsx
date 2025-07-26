@@ -27,11 +27,11 @@ export default function IntroSection() {
         <>
             {/* Value Proposition Section */}
             <motion.section
-                className="flex flex-col gap-8 py-12 px-4 w-full"
+                className="mx-auto flex flex-col gap-8 py-12 px-4 w-full"
                 variants={containerVariants}
                 aria-labelledby="main-heading"
             >
-                <div className="text-center mb-6 w-full">
+                <div className="mx-auto text-center mb-6 w-full">
                     <motion.h1
                         id="main-heading"
                         className="text-3xl sm:text-4xl font-bold mb-4"

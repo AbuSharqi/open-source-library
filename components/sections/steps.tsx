@@ -119,7 +119,7 @@ export default function StepsSection() {
     return (
         <motion.section
             aria-labelledby="process-heading"
-            className="w-full py-16 px-4 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+            className="mx-auto w-full py-16 px-4 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800"
             variants={containerVariants}
         >
             <div className="max-w-6xl mx-auto">

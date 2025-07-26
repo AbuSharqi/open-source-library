@@ -20,7 +20,7 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <nav className="rounded-md sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <nav className="mx-auto rounded-md sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex gap-5 items-center justify-between h-16">
                     {/* Left side - Logo */}

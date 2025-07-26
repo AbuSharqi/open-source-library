@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <>
       {loading && (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="mx-auto flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
           <div className="flex flex-col items-center gap-4">
             <Feather className="h-50 w-50 text-purple-600 animate-pulse" />
             <div className="text-center">
@@ -63,46 +63,21 @@ export default function Home() {
       )}
       <>
         {confirmPage === false && (
-          <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+          <div className="min-h-screen flex flex-col">
             <Navbar />
 
-            <SEOAnimator>
-              <motion.main
-                className="flex flex-col gap-8 row-start-2 items-center max-w-7xl w-full"
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-                aria-label="Teaching program management solution"
-              >
-                <IntroSection />
-
-                {/* Process Section */}
-                <StepsSection />
-
-                {/* Video Section */}
-                <motion.section
-                  className="w-full"
-                  variants={itemVariants}
-                  aria-label="Demo video"
-                >
-                  <div className="relative w-full aspect-video rounded-xl shadow-xl overflow-hidden">
-                    <iframe
-                      src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
-                      title="Website Process Demo"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                      frameBorder="0"
-                    ></iframe>
-                  </div>
-                </motion.section>
-
-                <WorkSection />
-
-                {/* Sign-Up Form */}
-                <FinalSection />
-              </motion.main>
-            </SEOAnimator>
+            <motion.main
+              className="w-full bg-gray-100 dark:bg-gray-900 flex flex-col items-center gap-8 py-8 px-4 sm:px-6 md:px-8 flex-1"
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+            >
+              {/* All sections will be perfectly centered */}
+              <IntroSection />
+              <StepsSection />
+              <WorkSection />
+              <FinalSection />
+            </motion.main>
 
             <CommonFooter />
           </div>
