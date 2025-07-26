@@ -61,8 +61,10 @@ export default function WorkSection() {
                 >
                     {/* Image Preview */}
                     <Link
-                        href="https://abusharqi.github.io/single-page-demo/">
-
+                        href="https://abusharqi.github.io/single-page-demo/"
+                        target="_blank" // Opens in new tab
+                        rel="noopener noreferrer" // Security best practice
+                    >
                         <motion.div
                             className="cursor-pointer group relative rounded-xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800"
                             whileHover={{ scale: 1.02 }}
@@ -167,6 +169,6 @@ export default function WorkSection() {
                     </div>
                 </motion.div>
             </div>
-        </motion.section>
+        </motion.section >
     )
 }
