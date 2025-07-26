@@ -1,103 +1,113 @@
-import Image from "next/image";
+'use client'
+
+import { useEffect, useState } from "react";
+import { Link as LinkIcon, Feather, Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Navbar } from "@/components/navbar";
+import { CommonFooter } from "@/components/common-footer";
+import { motion, LazyMotion, domAnimation } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import IntroSection from "@/components/sections/intro";
+import StepsSection from "@/components/sections/steps";
+import { ArrowDown } from "lucide-react";
+import FinalSection from "@/components/sections/final";
+import WorkSection from "@/components/sections/work";
+
+const SEOAnimator = ({ children }: { children: React.ReactNode }) => (
+  <LazyMotion features={domAnimation}>{children}</LazyMotion>
+);
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const cardVariants = {
+  hidden: { scale: 0.95, opacity: 0 },
+  visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 300 } }
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [confirmPage, setConfirmPage] = useState<boolean>(false);
+  const [email, setEmail] = useState('');
+  const [showDomainHint, setShowDomainHint] = useState(true);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      {loading && (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+          <div className="flex flex-col items-center gap-4">
+            <Feather className="h-50 w-50 text-purple-600 animate-pulse" />
+            <div className="text-center">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Yusr (يُسْر) Solutions
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300">Web & Marketing Solutions</p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      )}
+      <>
+        {confirmPage === false && (
+          <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+            <Navbar />
+
+            <SEOAnimator>
+              <motion.main
+                className="flex flex-col gap-8 row-start-2 items-center max-w-7xl w-full"
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+                aria-label="Teaching program management solution"
+              >
+                <IntroSection />
+
+                {/* Process Section */}
+                <StepsSection />
+
+                {/* Video Section */}
+                <motion.section
+                  className="w-full"
+                  variants={itemVariants}
+                  aria-label="Demo video"
+                >
+                  <div className="relative w-full aspect-video rounded-xl shadow-xl overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
+                      title="Website Process Demo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
+                </motion.section>
+
+                <WorkSection />
+
+                {/* Sign-Up Form */}
+                <FinalSection />
+              </motion.main>
+            </SEOAnimator>
+
+            <CommonFooter />
+          </div>
+        )}
+      </>
+    </>
   );
 }
