@@ -220,7 +220,7 @@ export default function FinalSection() {
                         {/* Existing "What we promise you" section */}
                         <div className="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-700">
                             <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                                What we promise for you باذن الله :
+                                What we guarantee for you باذن الله
                             </h4>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
@@ -257,7 +257,7 @@ export default function FinalSection() {
                                     </h4>
                                     <p className="text-gray-700 dark:text-gray-300">
                                         We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
-                                        If more students don't come to your program <span className="font-bold">despite taking real action</span>
+                                        If more students don't come to your program <span className="font-bold">despite taking real action </span>
                                         towards getting more students, we will continue working on your website
                                         <span className="font-bold text-teal-300"> until you succeed in sha Allah</span>.
                                     </p>

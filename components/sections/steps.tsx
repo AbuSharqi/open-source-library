@@ -263,6 +263,7 @@ export default function StepsSection() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: .5 }}
+                            viewport={{ once: true }}
                         >
                             <div className="text-rose-600 dark:text-rose-400 font-bold text-xl mb-4">Without Professional Guidance</div>
                             <ul className="space-y-3 text-left text-gray-700 dark:text-gray-300">
