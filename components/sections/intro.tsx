@@ -38,22 +38,13 @@ export default function IntroSection() {
                         variants={itemVariants}
                         itemProp="headline"
                     >
-                        <span className="block mb-2 bg-gradient-to-r from-purple-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+                        <span className="block mb-2 bg-gradient-to-r from-purple-400 via-indigo-400 to-teal-400 bg-clip-text text-transparent pb-0.5"> {/* Added padding-bottom */}
                             Why You Can't Reach Your Potential
                         </span>
-                        <span className="text-2xl sm:text-3xl font-normal block bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
+                        <span className="text-2xl sm:text-3xl font-normal block bg-gradient-to-r from-teal-400 to-indigo-400 bg-clip-text text-transparent pb-2"> {/* Added padding-bottom */}
                             6 Things Stopping You From Reaching Your Audience
                         </span>
                     </motion.h1>
-
-                    <motion.p
-                        className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-                        variants={itemVariants}
-                        transition={{ delay: 0.3 }}
-                    >
-                        <span className="font-bold text-rose-500">ONLY</span> posting <span className="font-bold">Important Program Details</span> on <span className="font-bold">Social Media</span> makes it hard for students to find <span className="font-semibold text-purple-600 dark:text-purple-300">what they need</span>.
-                        This problem is <span className="font-bold text-rose-500">not getting you new students</span> and <span className="font-bold text-amber-500">slowing your success</span>.
-                    </motion.p>
                 </div>
 
                 {/* Responsive Grid Layout */}

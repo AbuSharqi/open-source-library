@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button';
-import { MessageCircle, Calendar, ChevronDown, Mail } from 'lucide-react';
+import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck } from 'lucide-react';
 import {
     XCircle, CheckCircle, DollarSign, Clock, AlertCircle, Turtle,
     ShieldOff, Headphones, Zap, Search, PiggyBank, Gauge, Code,
@@ -216,28 +216,73 @@ export default function FinalSection() {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-700">
-                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                            What we promise for you باذن الله :
-                        </h4>
+                    <div className="space-y-8"> {/* Added wrapper for spacing */}
+                        {/* Existing "What we promise you" section */}
+                        <div className="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-700">
+                            <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                                What we promise for you باذن الله :
+                            </h4>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
-                            <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
-                                <Users className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                <h5 className="font-semibold">More Committed Students</h5>
-                                <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                    Attract students serious about learning
-                                </p>
-                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
+                                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                                    <Users className="w-10 h-10 mx-auto text-teal-500 mb-2" />
+                                    <h5 className="font-semibold">More Committed Students</h5>
+                                    <p className="text-gray-600 dark:text-gray-300 mt-1">
+                                        Attract students serious about learning
+                                    </p>
+                                </div>
 
-                            <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
-                                <ArrowUpRight className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                <h5 className="font-semibold">Sustainable Growth</h5>
-                                <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                    Consistent enrollment month after month
-                                </p>
+                                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                                    <ArrowUpRight className="w-10 h-10 mx-auto text-teal-500 mb-2" />
+                                    <h5 className="font-semibold">Sustainable Growth</h5>
+                                    <p className="text-gray-600 dark:text-gray-300 mt-1">
+                                        Consistent enrollment month after month
+                                    </p>
+                                </div>
                             </div>
                         </div>
+
+                        {/* New Guarantee Section */}
+                        <motion.div
+                            className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-6 border border-indigo-200 dark:border-indigo-700"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 0.6 }}
+                        >
+                            <div className="flex items-start gap-3">
+                                <BadgeCheck className="w-8 h-8 text-indigo-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                                        Our Work Guarantee ان شاء الله
+                                    </h4>
+                                    <p className="text-gray-700 dark:text-gray-300">
+                                        We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
+                                        If more students don't come to your program <span className="font-bold">despite taking real action</span>
+                                        towards getting more students, we will continue working on your website
+                                        <span className="font-bold text-teal-300"> until you succeed in sha Allah</span>.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="mt-4 p-3 bg-white dark:bg-gray-800 rounded-lg border border-indigo-100 dark:border-indigo-800">
+                                <div className="text-center">
+                                    {/* Arabic verse with proper styling */}
+                                    <p className="text-2xl font-arabic leading-relaxed text-gray-800 dark:text-gray-200 mb-2">
+                                        وَأَحْسِنُوٓا۟ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ
+                                    </p>
+
+                                    {/* Translation */}
+                                    <p className="text-gray-700 dark:text-gray-300 italic mb-1">
+                                        "And do good; indeed, Allah loves the doers of good."
+                                    </p>
+
+                                    {/* Surah reference */}
+                                    <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
+                                        Surah Al-Baqarah (2:195)
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
 
                     <div className="mt-6 text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
