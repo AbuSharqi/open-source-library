@@ -525,51 +525,11 @@ export default function FinalSection() {
                             </div>
 
                             {/* Contact options */}
-                            <div className="flex flex-col lg:flex-row items-center gap-6 mb-8 max-w-4xl mx-auto">
-                                {/* Facebook Message */}
-                                <motion.div
-                                    className="w-full lg:w-1/3"
-                                    whileHover={{ y: -5 }}
-                                >
-                                    <a
-                                        href="https://m.me/61551850978373"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block"
-                                    >
-                                        <div className="cursor-pointer w-full bg-[#1877F2] hover:bg-[#166FE5] text-white px-6 py-5 rounded-xl text-md font-semibold transition-all flex flex-col items-center justify-center gap-2 shadow-lg hover:shadow-xl">
-                                            <div className="bg-white/20 p-3 rounded-full">
-                                                <MessageCircle className="w-6 h-6" />
-                                            </div>
-                                            <span>Message Us on Facebook</span>
-                                        </div>
-                                    </a>
-                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Quick questions & answers</p>
-                                </motion.div>
-
-                                {/* Email */}
-                                <motion.div
-                                    className="w-full lg:w-1/3"
-                                    whileHover={{ y: -5 }}
-                                >
-                                    <div className="w-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-800 dark:to-gray-700 border border-indigo-200 dark:border-gray-600 text-gray-800 dark:text-gray-200 px-6 py-5 rounded-xl text-md font-semibold transition-all flex flex-col items-center justify-center gap-2 shadow hover:shadow-md">
-                                        <div className="bg-indigo-500/10 dark:bg-indigo-500/20 p-3 rounded-full">
-                                            <Mail className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                                        </div>
-                                        <div className="flex items-center select-none">
-                                            <span>Email Us</span>
-                                            <ChevronDown className="w-4 h-4 ml-1" />
-                                        </div>
-                                    </div>
-                                    <div className="mt-2 text-indigo-600 dark:text-indigo-400 font-bold text-lg">
-                                        noelramadan06@gmail.com
-                                    </div>
-                                </motion.div>
-
+                            <div className="flex flex-col justify-items-center lg:flex-row items-center gap-6 mb-8 max-w-4xl mx-auto">
                                 {/* Book Call */}
                                 <motion.div
-                                    className="w-full lg:w-1/3"
-                                    whileHover={{ y: -5 }}
+                                    className="w-full lg:w-1/2"
+                                    whileHover={{ y: -2 }}
                                 >
                                     <a
                                         href="https://cal.com/yusr.solutions/free-discovery-call"
@@ -584,7 +544,7 @@ export default function FinalSection() {
                                             <span>Book a Discovery Call</span>
                                         </div>
                                     </a>
-                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Detailed plan & strategy</p>
+                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Help Us Discover Your Vision ان شاء الله</p>
                                 </motion.div>
                             </div>
 
