@@ -4,8 +4,12 @@ import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck } from 'lucide-r
 import {
     XCircle, CheckCircle, DollarSign, Clock, AlertCircle, Turtle,
     ShieldOff, Headphones, Zap, Search, PiggyBank, Gauge, Code,
-    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight
+    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight, Check, Share2
 } from 'lucide-react';
+import {
+    LayoutTemplate,
+    Video, CalendarCheck, Rocket
+} from "lucide-react";
 
 type IconKeys = keyof typeof icons;
 
@@ -188,108 +192,296 @@ export default function FinalSection() {
                 </div>
 
                 {/* Missed Opportunity Calculator */}
-                <motion.div
-                    className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-indigo-200 dark:border-gray-600 text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                >
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                                The Potential You Might Be Missing
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300 max-w-md">
-                                Many educators see significant growth when they complement social media with a professional website
-                            </p>
-                        </div>
+                <div className="max-w-6xl mx-auto px-4 py-12">
+                    <motion.div
+                        className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-indigo-200 dark:border-gray-600 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                    >
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+                            <div className="text-center md:text-left">
+                                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                                    The Potential You Might Be Missing
+                                </h3>
+                                <p className="text-gray-600 dark:text-gray-300 max-w-md">
+                                    Many educators see significant growth when they complement social media with a professional website
+                                </p>
+                            </div>
 
-                        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                            <div className="flex flex-col gap-2">
-                                <div className="text-center">
-                                    <span className="text-sm text-gray-600 dark:text-gray-300">Typical Growth for Educators</span>
-                                    <div className="text-xl font-bold text-teal-600 dark:text-teal-400 mt-1">
-                                        Significant Increase in Serious Students
+                            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                <div className="flex flex-col gap-2">
+                                    <div className="text-center">
+                                        <span className="text-sm text-gray-600 dark:text-gray-300">Typical Growth for Educators</span>
+                                        <div className="text-xl font-bold text-teal-600 dark:text-teal-400 mt-1">
+                                            Significant Increase in Serious Students
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="space-y-8"> {/* Added wrapper for spacing */}
-                        {/* Existing "What we promise you" section */}
-                        <div className="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-700">
-                            <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                                What we guarantee for you باذن الله
-                            </h4>
+                        <div className="space-y-8">
+                            {/* Existing "What we promise you" section */}
+                            <div className="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-700">
+                                <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                                    What we guarantee for you باذن الله
+                                </h4>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
-                                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
-                                    <Users className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                    <h5 className="font-semibold">More Committed Students</h5>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                        Attract students serious about learning
-                                    </p>
-                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
+                                    <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                                        <Users className="w-10 h-10 mx-auto text-teal-500 mb-2" />
+                                        <h5 className="font-semibold">More Committed Students</h5>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-1">
+                                            Attract students serious about learning
+                                        </p>
+                                    </div>
 
-                                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
-                                    <ArrowUpRight className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                    <h5 className="font-semibold">Sustainable Growth</h5>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                        Consistent enrollment month after month
-                                    </p>
+                                    <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                                        <ArrowUpRight className="w-10 h-10 mx-auto text-teal-500 mb-2" />
+                                        <h5 className="font-semibold">Sustainable Growth</h5>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-1">
+                                            Consistent enrollment month after month
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* New Content & Social Media Strategy Section */}
+                            <motion.div
+                                className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg p-6 border border-amber-200 dark:border-amber-700"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                            >
+                                <div className="flex flex-col md:flex-row items-start gap-6">
+                                    <div className="text-center md:text-left flex-1">
+                                        <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">
+                                            <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                                                People will join your class <br /> ان شاء الله
+                                            </span>
+                                        </h4>
+                                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                                            A <span className="font-bold text-amber-600 dark:text-amber-400">in-depth content strategy</span> will build your social media and ensure you get the audience you need باذن الله
+                                        </p>
+
+                                        <div className="bg-amber-100 dark:bg-amber-900/30 rounded-lg p-4 mb-4">
+                                            <p className="text-amber-800 dark:text-amber-200 text-sm">
+                                                <span className="font-semibold">Note: </span>
+                                                Your involvement is providing your own relevant content. We do <strong>everything else for you</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg flex-1">
+                                        <div className="space-y-4">
+                                            {[
+                                                {
+                                                    icon: <LayoutTemplate className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                    title: "Strategy Development",
+                                                    description: "We will choose for you the <strong>perfect strategy</strong> just for <strong>your audience</strong>"
+                                                },
+                                                {
+                                                    icon: <Video className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                    title: "Content Creation",
+                                                    description: "We will <strong>transform your raw content</strong> into polished, <strong>engaging masterpieces</strong>"
+                                                },
+                                                {
+                                                    icon: <CalendarCheck className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                    title: "Basic Management",
+                                                    description: "We will <strong>schedule posts</strong> to <strong>build your community</strong>"
+                                                }
+                                            ].map((item, idx) => (
+                                                <div key={idx} className="flex items-start gap-3">
+                                                    <div className="mt-1">{item.icon}</div>
+                                                    <div>
+                                                        <h5 className="font-bold text-gray-800 dark:text-white">{item.title}</h5>
+                                                        <p
+                                                            className="text-gray-600 dark:text-gray-300 text-sm"
+                                                            dangerouslySetInnerHTML={{ __html: item.description }}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    {[
+                                        {
+                                            title: "Increased Visibility",
+                                            description: "Get your website and business seen by more potential students"
+                                        },
+                                        {
+                                            title: "Professional Image",
+                                            description: "Polished content enhances your credibility and authority"
+                                        },
+                                        {
+                                            title: "Targeted Growth",
+                                            description: "Strategic approach ensures you reach the right audience"
+                                        }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg border border-amber-100 dark:border-amber-900/50">
+                                            <h5 className="font-bold text-amber-700 dark:text-amber-300">{item.title}</h5>
+                                            <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{item.description}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
+                            {/* Work Guarantee Section */}
+                            <motion.div
+                                className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-6 border border-indigo-200 dark:border-indigo-700"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                            >
+                                <div className="flex items-start gap-3">
+                                    <BadgeCheck className="w-8 h-8 text-indigo-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                                            Our Work Guarantee ان شاء الله
+                                        </h4>
+                                        <p className="text-gray-700 dark:text-gray-300">
+                                            We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
+                                            If more students don't come to your program <span className="font-bold">despite taking real action </span>
+                                            towards getting more students, we will continue to work with you
+                                            <span className="font-bold text-teal-300 dark:text-indigo-400"> for free</span> until you see results
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4 p-3 bg-white dark:bg-gray-800 rounded-lg border border-indigo-100 dark:border-indigo-800">
+                                    <div className="text-center">
+                                        <p className="text-2xl font-arabic leading-relaxed text-gray-800 dark:text-gray-200 mb-2">
+                                            وَأَحْسِنُوٓا۟ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ
+                                        </p>
+                                        <p className="text-gray-700 dark:text-gray-300 italic mb-1">
+                                            "And do good; indeed, Allah loves the doers of good."
+                                        </p>
+                                        <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
+                                            Surah Al-Baqarah (2:195)
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
 
-                        {/* New Guarantee Section */}
+                        {/* Closing Deal Section */}
                         <motion.div
-                            className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-6 border border-indigo-200 dark:border-indigo-700"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.6 }}
+                            className="mt-10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border border-emerald-300/30 dark:border-emerald-500/30 rounded-xl p-8 text-center relative overflow-hidden"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.8 }}
                         >
-                            <div className="flex items-start gap-3">
-                                <BadgeCheck className="w-8 h-8 text-indigo-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" />
-                                <div>
-                                    <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                                        Our Work Guarantee ان شاء الله
-                                    </h4>
-                                    <p className="text-gray-700 dark:text-gray-300">
-                                        We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
-                                        If more students don't come to your program <span className="font-bold">despite taking real action </span>
-                                        towards getting more students, we will continue working on your website
-                                        <span className="font-bold text-teal-300"> until you succeed in sha Allah</span>.
-                                    </p>
+                            {/* Decorative elements */}
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400/0 via-emerald-400/50 to-emerald-400/0"></div>
+                            <div className="absolute top-6 -left-10 w-20 h-20 rounded-full bg-emerald-400/10 blur-xl"></div>
+                            <div className="absolute bottom-4 -right-8 w-24 h-24 rounded-full bg-emerald-400/10 blur-xl"></div>
+
+                            <div className="relative z-10">
+                                <div className="flex items-center justify-center mb-6">
+                                    <div className="bg-emerald-500/10 p-3 rounded-full mr-3">
+                                        <Rocket className="w-10 h-10 text-emerald-300" />
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                                        We want to <span className='text-emerald-300'>see you grow</span> باذن الله
+                                    </h3>
                                 </div>
-                            </div>
 
-                            <div className="mt-4 p-3 bg-white dark:bg-gray-800 rounded-lg border border-indigo-100 dark:border-indigo-800">
-                                <div className="text-center">
-                                    {/* Arabic verse with proper styling */}
-                                    <p className="text-2xl font-arabic leading-relaxed text-gray-800 dark:text-gray-200 mb-2">
-                                        وَأَحْسِنُوٓا۟ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ
-                                    </p>
+                                <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-8">
+                                    Our <span className="font-bold text-emerald-300">complete package</span> gives you everything you need:
+                                </p>
 
-                                    {/* Translation */}
-                                    <p className="text-gray-700 dark:text-gray-300 italic mb-1">
-                                        "And do good; indeed, Allah loves the doers of good."
-                                    </p>
+                                {/* Package Details */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+                                    <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-emerald-400/20 hover:border-emerald-400/40 transition-all">
+                                        <div className="flex items-center justify-center mb-3">
+                                            <LayoutTemplate className="w-8 h-8 text-emerald-300 mr-2" />
+                                            <h4 className="text-xl font-bold text-white">Professional Website</h4>
+                                        </div>
+                                        <ul className="text-left text-slate-300 space-y-2 mt-4">
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Showcase your teaching expertise</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Accept bookings & payments easily</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Display student testimonials</span>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                    {/* Surah reference */}
-                                    <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                                        Surah Al-Baqarah (2:195)
-                                    </p>
+                                    <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-emerald-400/20 hover:border-emerald-400/40 transition-all">
+                                        <div className="flex items-center justify-center mb-3">
+                                            <Share2 className="w-8 h-8 text-emerald-300 mr-2" />
+                                            <h4 className="text-xl font-bold text-white">Strategic Social Media Plan</h4>
+                                        </div>
+                                        <ul className="text-left text-slate-300 space-y-2 mt-4">
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Content strategy tailored to your audience</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Platform-specific engagement techniques</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <Check className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
+                                                <span>Consistent branding across all platforms</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+
+                                <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-6">
+                                    Together, these give you the power to:
+                                </p>
+
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+                                    {[
+                                        "Attract serious students consistently",
+                                        "Establish yourself as an authority",
+                                        "Grow your teaching business sustainably"
+                                    ].map((item, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            className="bg-emerald-500/10 backdrop-blur-sm rounded-lg p-4 border border-emerald-400/20 hover:border-emerald-400/40 transition-all"
+                                            whileHover={{ y: -5 }}
+                                        >
+                                            <div className="text-white font-medium">{item}</div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <motion.button
+                                    className="cursor-pointer bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-200 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 mt-2 flex items-center justify-center mx-auto"
+                                    whileHover={{ scale: 1.01 }}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const target = document.querySelector('#contact-section');
+                                        if (target) {
+                                            target.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                >
+                                    <span>Get Started Today</span>
+                                    <ArrowRight className="w-5 h-5 ml-2" />
+                                </motion.button>
                             </div>
                         </motion.div>
-                    </div>
 
-                    <div className="mt-6 text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        *Educators who complement social media with professional websites typically see increased student interest and enrollment.
-                        Actual results vary and come with Allah's permission - we provide the means while He provides the growth.
-                    </div>
-                </motion.div>
+                        <div className="mt-8 text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            *Educators who complement social media with professional websites typically see increased student interest and enrollment.
+                            Actual results vary and come with Allah's permission - we provide the means while He provides the growth.
+                        </div>
+                    </motion.div>
+                </div>
 
                 <motion.div
                     id='contact-section'
@@ -352,7 +544,7 @@ export default function FinalSection() {
                             >
                                 <Button className="cursor-pointer w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white px-6 py-5 text-md font-semibold hover:from-purple-700 hover:to-teal-600 transition-all flex items-center justify-center gap-2">
                                     <Calendar className="w-5 h-5" />
-                                    Book a Free Discovery Call
+                                    Book a Discovery Call
                                 </Button>
                             </a>
                         </div>
