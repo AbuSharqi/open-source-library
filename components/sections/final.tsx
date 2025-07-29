@@ -525,17 +525,17 @@ export default function FinalSection() {
                             </div>
 
                             {/* Contact options */}
-                            <div className="flex flex-col justify-items-center lg:flex-row items-center gap-6 mb-8 max-w-4xl mx-auto">
+                            <div className="flex flex-col items-center gap-6 mb-8 max-w-4xl mx-auto">
                                 {/* Book Call */}
                                 <motion.div
-                                    className="w-full lg:w-1/2"
+                                    className="w-full lg:w-1/2 flex flex-col items-center"
                                     whileHover={{ y: -2 }}
                                 >
                                     <a
                                         href="https://cal.com/yusr.solutions/free-discovery-call"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block"
+                                        className="block w-full"
                                     >
                                         <div className="cursor-pointer w-full bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white px-6 py-5 rounded-xl text-md font-semibold transition-all flex flex-col items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                                             <div className="bg-white/20 p-3 rounded-full">
@@ -544,7 +544,7 @@ export default function FinalSection() {
                                             <span>Book a Discovery Call</span>
                                         </div>
                                     </a>
-                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Help Us Discover Your Vision ان شاء الله</p>
+                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">Help Us Discover Your Vision ان شاء الله</p>
                                 </motion.div>
                             </div>
 
