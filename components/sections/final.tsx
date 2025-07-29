@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useEffect } from 'react';
+import Cal, { getCalApi } from "@calcom/embed-react";
 import { Button } from '../ui/button';
 import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck } from 'lucide-react';
 import {
@@ -56,6 +58,13 @@ const icons = {
 }
 
 export default function FinalSection() {
+    useEffect(() => {
+        (async function () {
+            const cal = await getCalApi({ "namespace": "strategy-session" });
+            cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+        })();
+    }, [])
+
     return (
         <motion.section
             className="mx-auto w-full rounded-xl shadow-xl p-8 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700"
@@ -524,32 +533,41 @@ export default function FinalSection() {
                                 </p>
                             </div>
 
+                            {/* Closing note */}
+                            <motion.div
+                                className="max-w-3xl mx-auto px-6 py-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-xl shadow-sm"
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                            >
+                                <p className="text-3xl font-arabic mb-4 text-emerald-800 dark:text-emerald-200 leading-loose md:leading-normal">﴾ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانْتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِنْ فَضْلِ اللَّهِ﴿</p>
+                                <p className="text-lg text-emerald-700 dark:text-emerald-300 italic">
+                                    "And when the prayer has been concluded, disperse within the land and seek from the bounty of Allāh..."
+                                </p>
+                                <p className="mt-2 text-slate-600 dark:text-slate-400">- Al-Jumu'ah (62:10)</p>
+                            </motion.div>
+
                             {/* Contact options */}
-                            <div className="flex flex-col items-center gap-6 mb-8 max-w-4xl mx-auto">
+                            <div className="flex flex-col items-center gap-6 mb-4 mt-4 max-w-4xl mx-auto">
                                 {/* Book Call */}
                                 <motion.div
                                     className="w-full lg:w-1/2 flex flex-col items-center"
                                     whileHover={{ y: -2 }}
                                 >
-                                    <a
-                                        href="https://cal.com/yusr.solutions/free-discovery-call"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full"
-                                    >
-                                        <div className="cursor-pointer w-full bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white px-6 py-5 rounded-xl text-md font-semibold transition-all flex flex-col items-center justify-center gap-2 shadow-lg hover:shadow-xl">
-                                            <div className="bg-white/20 p-3 rounded-full">
-                                                <Calendar className="w-6 h-6" />
-                                            </div>
-                                            <span>Book a Discovery Call</span>
-                                        </div>
-                                    </a>
-                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">Help Us Discover Your Vision ان شاء الله</p>
+                                    <p className="mt-2 text-md text-gray-500 dark:text-gray-400 text-center">Below is where you can book your meeting ان شاء الله</p>
+                                    <p className="mt-2 text-md text-gray-500 dark:text-gray-400 text-center">If this is loading, please be patient</p>
                                 </motion.div>
                             </div>
 
+
+                            <Cal namespace="strategy-session"
+                                calLink="yusr.solutions/free-discovery-call"
+                                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                                config={{ "layout": "month_view" }}
+                            />
+
                             {/* Benefits footer */}
-                            <div className="mt-12 mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 max-w-2xl mx-auto">
+                            <div className="mt-0 mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 max-w-2xl mx-auto">
                                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />
@@ -565,20 +583,6 @@ export default function FinalSection() {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Closing note */}
-                            <motion.div
-                                className="max-w-3xl mx-auto px-6 py-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-xl shadow-sm"
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                            >
-                                <p className="text-3xl font-arabic mb-4 text-emerald-800 dark:text-emerald-200 leading-loose md:leading-normal">﴾ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانْتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِنْ فَضْلِ اللَّهِ﴿</p>
-                                <p className="text-lg text-emerald-700 dark:text-emerald-300 italic">
-                                    "And when the prayer has been concluded, disperse within the land and seek from the bounty of Allāh..."
-                                </p>
-                                <p className="mt-2 text-slate-600 dark:text-slate-400">- Al-Jumu'ah (62:10)</p>
-                            </motion.div>
                         </motion.div>
                     </div>
 
