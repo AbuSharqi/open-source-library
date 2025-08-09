@@ -8,6 +8,7 @@ import { CommonFooter } from "@/components/common-footer";
 import { motion, LazyMotion, domAnimation } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import IntroSection from "@/components/sections/intro";
+import Intro2Section from "@/components/sections/intro2";
 import StepsSection from "@/components/sections/steps";
 import { ArrowDown } from "lucide-react";
 import FinalSection from "@/components/sections/final";
@@ -74,23 +75,8 @@ export default function Home() {
             >
               {/* All sections will be perfectly centered */}
               <IntroSection />
+              <Intro2Section />
               <StepsSection />
-              <motion.section
-                className="w-full"
-                variants={itemVariants}
-                aria-label="Demo video"
-              >
-                <div className="relative w-full aspect-video rounded-xl shadow-xl overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
-                    title="Website Process Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                    frameBorder="0"
-                  />
-                </div>
-              </motion.section>
               <WorkSection />
               <FinalSection />
             </motion.main>

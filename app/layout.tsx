@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Get More Students باذن الله",
+  title: "Scale Your Agency باذن الله",
   description: "Get more students for your teaching program with our comprehensive management solution.",
 };
 

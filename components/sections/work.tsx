@@ -2,7 +2,7 @@ import {
     Layout, CheckCircle, ExternalLink, MessageCircle, Plus
 } from 'lucide-react';
 import { motion } from 'framer-motion'
-import DemoScreenshot from '@/lib/demo-screenshot-new.png'
+import DemoScreenshot from '@/lib/images/app-demo-screenshot.png'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ const itemVariants = {
 export default function WorkSection() {
     return (
         <motion.section
-            className="mx-auto w-full py-16 px-4 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+            className="mx-auto w-full py-5 px-4 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800"
             variants={containerVariants}
             aria-labelledby="our-work-heading"
         >
@@ -36,18 +36,15 @@ export default function WorkSection() {
                         className="text-3xl sm:text-4xl font-bold mb-4"
                         variants={itemVariants}
                     >
-                        <span className="block mb-2 bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">
-                            Our Recent Work
-                        </span>
-                        <span className="text-xl sm:text-2xl font-normal text-gray-600 dark:text-gray-300">
-                            See How We Transform Islamic Education Online
+                        <span className="py-0.5 leading-[2] inline-block md:block mb-2 bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">
+                            See How We Will Transform Your Workflow ان شاء الله
                         </span>
                     </motion.h2>
                     <motion.p
-                        className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"
+                        className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-xl"
                         variants={itemVariants}
                     >
-                        Each website we create is custom-built to showcase an educator's unique value and connect them with serious students.
+                        Each app we create is custom-built to showcase a travel company's unique value and make working with pilgrims easier.
                     </motion.p>
                 </motion.div>
 
@@ -86,8 +83,8 @@ export default function WorkSection() {
 
                                 {/* Content overlay */}
                                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-                                    <h3 className="text-xl md:text-2xl font-bold">Al-Hidaya Institute</h3>
-                                    <p className="text-gray-200 mt-1">Professional Tajweed & Memorization Program</p>
+                                    <h3 className="text-xl md:text-2xl font-bold">Pilgrim Path Demo</h3>
+                                    <p className="text-gray-200 mt-1">Pilgrim Journey Hub</p>
                                     <p className="text-gray-200 mt-1>">(For Demonstration Purposes Only)</p>
                                 </div>
 
@@ -104,20 +101,18 @@ export default function WorkSection() {
                                 Featured Project
                             </div>
                             <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                                Your Future Website ان شاء الله
+                                Your Future App ان شاء الله
                             </h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
-                                This demo showcases how we can build a Quran teaching business a professional easy-to-understand website. Key features include:
+                                This demo showcases how we can make your workflow seemless. It includes:
                             </p>
 
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                                 {[
-                                    "Stunning homepage",
-                                    "Detailed program descriptions",
-                                    "Teacher credentials showcase",
-                                    "Testimonials section",
-                                    "Clear Payment Representation",
-                                    "Mobile-responsive design",
+                                    "Authentication Page",
+                                    "Pilgrim Document Management",
+                                    "Group Leader Admin Console",
+                                    "Responsive Communication Between Group Leaders & Pilgrims"
                                 ].map((feature, idx) => (
                                     <li key={idx} className="flex items-start">
                                         <CheckCircle className="w-5 h-5 text-teal-500 mt-0.5 mr-2 flex-shrink-0" />
@@ -129,7 +124,7 @@ export default function WorkSection() {
 
                         <div className="flex flex-wrap gap-4">
                             <a
-                                href="https://abusharqi.github.io/single-page-demo/"
+                                href="https://yusr-solutions.github.io/app-demo/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none bg-gradient-to-r from-purple-600 to-teal-500 text-white hover:from-purple-700 hover:to-teal-600 h-11 px-6 py-3"
@@ -154,7 +149,7 @@ export default function WorkSection() {
                                 aria-label="Scroll to contact section"
                             >
                                 <MessageCircle className="w-4 h-4 mr-2" />
-                                Request Your Own
+                                How Can I Get An App Like this?
                             </Link>
                         </div>
                     </div>

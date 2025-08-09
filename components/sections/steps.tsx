@@ -1,6 +1,7 @@
 import {
     Layout, Type, Heading, Subtitles, Target, PackageCheck,
-    BadgeCheck, Star, CreditCard, HelpCircle, XCircle, CheckCircle, ArrowDown
+    BadgeCheck, Star, CreditCard, HelpCircle, XCircle, CheckCircle, ArrowDown, Rocket,
+    GitMerge, Smartphone, ShieldCheck, Handshake
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
@@ -36,7 +37,12 @@ const icons = {
     HelpCircle: HelpCircle,
     XCircle: XCircle,
     CheckCircle: CheckCircle,
-    ArrowDown: ArrowDown
+    ArrowDown: ArrowDown,
+    Rocket: Rocket,
+    Smartphone: Smartphone,
+    GitMerge: GitMerge,
+    ShieldCheck: ShieldCheck,
+    Handshake: Handshake
 };
 
 // Then create the type based on the icons object
@@ -47,6 +53,7 @@ interface ProcessCardProps {
     number: number;
     title: string;
     description: string;
+    titleColor: string;
     benefit: string;
     icon: IconKey; // Use the IconKey type here
     delay?: number;
@@ -71,6 +78,7 @@ export default function StepsSection() {
         number,
         title,
         description,
+        titleColor,
         benefit,
         icon,
         delay = 0,
@@ -96,7 +104,7 @@ export default function StepsSection() {
                             <span className="font-bold text-xl">{number}</span>
                         </div>
                         <div className="min-w-0">
-                            <CardTitle className="flex items-center gap-2 text-lg font-bold">
+                            <CardTitle className={`flex items-center gap-2 text-lg font-bold ${titleColor}`}>
                                 <LucideIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                                 {title}
                             </CardTitle>
@@ -119,7 +127,7 @@ export default function StepsSection() {
     return (
         <motion.section
             aria-labelledby="process-heading"
-            className="mx-auto w-full py-16 px-4 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+            className="mx-auto w-full py-16 px-4 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800"
             variants={containerVariants}
         >
             <div className="max-w-6xl mx-auto">
@@ -129,135 +137,99 @@ export default function StepsSection() {
                         className="text-3xl sm:text-4xl font-bold mb-4"
                         variants={itemVariants}
                     >
-                        <span className="block mb-2 bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">
-                            Our Website Creation Process
+                        <span className="block mb-2 bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">
+                            Our App Development Approach
                         </span>
                         <span className="text-xl sm:text-2xl font-normal text-gray-600 dark:text-gray-300">
-                            Designed Specifically for Islamic Educators
+                            Designed Specifically for Hajj & Umrah Agencies
                         </span>
                     </motion.h2>
                     <motion.p
                         className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"
                         variants={itemVariants}
                     >
-                        We focus on genuine improvements that enhance your online presence and teaching impact
+                        We focus on genuine improvements that enhance your operational efficiency and pilgrim experience
                     </motion.p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Step Cards with Qualitative Benefits */}
+                    {/* Step 1: Design that Speaks */}
                     <ProcessCard
                         number={1}
                         title="Design That Speaks"
-                        description="We create <strong class='text-purple-600 dark:text-purple-400'>clear, inviting interfaces</strong> where visitors instantly know where to click"
-                        benefit="Improves visitor engagement"
+                        description="We create <strong class='text-teal-600 dark:text-teal-400'>clear, inviting interfaces</strong> where pilgrims instantly know where to go and how to interact"
+                        titleColor="bg-gradient-to-br text-teal-600 dark:text-teal-400 bg-clip-text text-transparent"
+                        benefit="Improves pilgrim engagement"
                         icon="Layout"
                         delay={0.1}
-                        color="from-purple-500 to-indigo-500"
+                        color="from-teal-500 to-teal-600"
                     />
+
+                    {/* Step 2: Problem Solution */}
                     <ProcessCard
                         number={2}
-                        title="Strategic Words"
-                        description="We carefully craft <strong class='text-indigo-600 dark:text-indigo-400'>effective messaging</strong> that connects with potential students"
-                        benefit="Enhances communication"
-                        icon="Type"
+                        title="Problem Solution"
+                        description="We use <strong class='text-blue-600 dark:text-blue-400'>modern app technology</strong> to ease pilgrim struggles and build an easy-going connection"
+                        titleColor="bg-gradient-to-br text-blue-600 dark:text-blue-400 bg-clip-text text-transparent"
+                        benefit="Reduces pilgrim friction"
+                        icon="Smartphone"
                         delay={0.2}
-                        color="from-indigo-500 to-blue-500"
+                        color="from-blue-500 to-blue-600"
                     />
+
+                    {/* Step 3: Seamless Integration */}
                     <ProcessCard
                         number={3}
-                        title="Compelling Header"
-                        description="We create <strong class='text-blue-600 dark:text-blue-400'>attention-grabbing headlines</strong> that make visitors stay"
-                        benefit="Increases visitor retention"
-                        icon="Heading"
+                        title="Seamless Integration"
+                        description="We build your custom app to work smoothly with <strong class='text-green-600 dark:text-green-400'>existing workflows</strong>, making adjustments easy and efficient"
+                        titleColor="bg-gradient-to-br text-green-600 dark:text-green-400 bg-clip-text text-transparent"
+                        benefit="Enhances team productivity"
+                        icon="GitMerge"
                         delay={0.3}
-                        color="from-blue-500 to-cyan-500"
+                        color="from-green-500 to-green-600"
                     />
+
+                    {/* Step 4: Robust Security & Privacy */}
                     <ProcessCard
                         number={4}
-                        title="Clear Subtitle"
-                        description="We expand on your promise with <strong class='text-cyan-600 dark:text-cyan-400'>supporting details</strong> that build trust"
-                        benefit="Strengthens your credibility"
-                        icon="Subtitles"
+                        title="Robust Security & Privacy"
+                        description="We prioritize <strong class='text-teal-600 dark:text-teal-400'>protection of pilgrim data</strong> with top-tier security measures"
+                        titleColor="bg-gradient-to-br text-teal-600 dark:text-teal-400 bg-clip-text text-transparent"
+                        benefit="Ensures trust and compliance"
+                        icon="ShieldCheck"
                         delay={0.4}
-                        color="from-cyan-500 to-teal-500"
+                        color="from-teal-500 to-blue-500"
                     />
+
+                    {/* Step 5: Ongoing Partnership */}
                     <ProcessCard
                         number={5}
-                        title="Problem Solution"
-                        description="We show deep understanding of <strong class='text-teal-600 dark:text-teal-400'>student struggles</strong> to build connection"
-                        benefit="Builds stronger relationships"
-                        icon="Target"
+                        title="Ongoing Partnership & Growth"
+                        description="We offer <strong class='text-blue-600 dark:text-blue-400'>continuous support</strong> and updates to ensure your app evolves with your needs"
+                        titleColor="bg-gradient-to-br text-blue-600 dark:text-blue-400 bg-clip-text text-transparent"
+                        benefit="Future-proofs your investment"
+                        icon="Handshake"
                         delay={0.5}
-                        color="from-teal-500 to-emerald-500"
-                    />
-                    <ProcessCard
-                        number={6}
-                        title="Value Proposition"
-                        description="We present your solution as <strong class='text-emerald-600 dark:text-emerald-400'>exactly what they need</strong>"
-                        benefit="Clearly communicates your value"
-                        icon="PackageCheck"
-                        delay={0.6}
-                        color="from-emerald-500 to-green-500"
-                    />
-                    <ProcessCard
-                        number={7}
-                        title="Proof & Credentials"
-                        description="We showcase your <strong class='text-green-600 dark:text-green-400'>qualifications</strong> and program quality"
-                        benefit="Establishes your authority"
-                        icon="BadgeCheck"
-                        delay={0.7}
-                        color="from-green-500 to-lime-500"
-                    />
-                    <ProcessCard
-                        number={8}
-                        title="Student Testimonials"
-                        description="We feature <strong class='text-lime-600 dark:text-lime-400'>success stories</strong> that build social proof"
-                        benefit="Builds trust through experience"
-                        icon="Star"
-                        delay={0.8}
-                        color="from-lime-500 to-yellow-500"
-                    />
-                    <ProcessCard
-                        number={9}
-                        title="Transparent Pricing"
-                        description="We organize <strong class='text-yellow-600 dark:text-yellow-400'>easy-to-understand</strong> packages"
-                        benefit="Reduces student hesitation"
-                        icon="CreditCard"
-                        delay={0.9}
-                        color="from-yellow-500 to-amber-500"
+                        color="from-blue-500 to-green-500"
                     />
                 </div>
 
-                {/* Pricing & FAQ Row */}
-                <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 mt-6">
-                    <ProcessCard
-                        number={10}
-                        title="FAQ Section"
-                        description="We anticipate and answer <strong class='text-amber-600 dark:text-amber-400'>a majority of potential questions</strong>"
-                        benefit="Saves you time on repeated inquiries"
-                        icon="HelpCircle"
-                        delay={1.0}
-                        color="from-amber-500 to-orange-500"
-                        fullWidth
-                    />
-                </div>
-
-                {/* Comparison Section - Qualitative Only */}
+                {/* Impact Statement */}
                 <motion.div
                     className="mt-16 text-center"
                     variants={itemVariants}
-                    transition={{ delay: 1.2 }}
+                    transition={{ delay: 0.8 }}
                     viewport={{ once: true }}
                 >
                     <motion.h3 className="text-2xl sm:text-3xl font-bold mb-10">
-                        <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">
-                            The Impact of Following This Process ان شاء الله
+                        <span className="bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">
+                            The Transformational Impact of Our App Solution
                         </span>
+                        <span className="block mt-2 text-3xl text-emerald-600">إن شاء الله</span>
                     </motion.h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        {/* Without Process */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        {/* Without App Solution */}
                         <motion.div
                             className="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 p-6 rounded-2xl border border-rose-200 dark:border-rose-800"
                             initial={{ opacity: 0, x: -20 }}
@@ -265,32 +237,42 @@ export default function StepsSection() {
                             transition={{ delay: .5 }}
                             viewport={{ once: true }}
                         >
-                            <div className="text-rose-600 dark:text-rose-400 font-bold text-xl mb-4">Without Professional Guidance</div>
-                            <ul className="space-y-3 text-left text-gray-700 dark:text-gray-300">
+                            <div className="text-rose-600 dark:text-rose-400 font-bold text-xl mb-4">Without An App Solution</div>
+                            <ul className="space-y-4 text-left text-gray-700 dark:text-gray-300">
                                 <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-rose-600">Visitors quickly leave</strong> without engaging</span>
+                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-rose-600">Administrative Overload:</strong> Your team buried under paperwork and manual tasks, leading to burnout
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-rose-600">Unclear messaging</strong> fails to connect with students</span>
+                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-rose-600">Increased Error Risk:</strong> Costly mistakes in documents and bookings due to manual processes
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-rose-600">Few students enroll</strong> despite your expertise</span>
+                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-rose-600">Fragmented Communication:</strong> Information scattered across emails and messages, causing delays
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-rose-600">Constant questions</strong> about pricing and process</span>
+                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-rose-600">Limited Scalability:</strong> Growth requires proportional staff increases, cutting into profits
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-rose-600">Limited growth</strong> despite teaching quality</span>
+                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-rose-600">Reactive Operations:</strong> Constantly solving problems instead of proactive management
+                                    </div>
                                 </li>
                             </ul>
                         </motion.div>
 
-                        {/* With Process */}
+                        {/* With App Solution */}
                         <motion.div
                             className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-teal-200 dark:border-teal-800"
                             initial={{ opacity: 0, x: 20 }}
@@ -298,38 +280,49 @@ export default function StepsSection() {
                             transition={{ delay: 1 }}
                             viewport={{ once: true }}
                         >
-                            <div className="text-teal-600 dark:text-teal-400 font-bold text-xl mb-4">With Our Professional Process</div>
-                            <ul className="space-y-3 text-left text-gray-700 dark:text-gray-300">
+                            <div className="text-teal-600 dark:text-teal-400 font-bold text-xl mb-4">With Our App Solution</div>
+                            <ul className="space-y-4 text-left text-gray-700 dark:text-gray-300">
                                 <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-teal-600">Visitors stay longer</strong> to explore your content</span>
+                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-teal-600">Streamlined Efficiency:</strong> Automate repetitive tasks and free your team for higher-value service
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-teal-600">Clear messaging</strong> converts visitors into students</span>
+                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-teal-600">Enhanced Accuracy:</strong> Digital validation ensures precise documents and regulatory compliance
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-teal-600">Consistent enrollment</strong> of committed students</span>
+                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-teal-600">Empowered Pilgrims:</strong> 24/7 access to information reduces inquiries and improves experience
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-teal-600">Self-service options</strong> save you time</span>
+                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-teal-600">Sustainable Growth:</strong> Scale operations without proportional staff increases
+                                    </div>
                                 </li>
                                 <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span><strong className="text-teal-600">Sustainable growth</strong> that supports your mission</span>
+                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                        <strong className="text-teal-600">Strategic Command:</strong> Real-time data enables proactive decisions and competitive advantage
+                                    </div>
                                 </li>
                             </ul>
                         </motion.div>
                     </div>
 
-                    {/* Disclaimer & CTA */}
+                    {/* CTA */}
+
                     <motion.div
                         className="mt-12 max-w-2xl mx-auto"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ delay: 1.8 }}
+                        transition={{ delay: .5 }}
                         viewport={{ once: true }}
                     >
                         <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-8">
@@ -346,7 +339,7 @@ export default function StepsSection() {
                             viewport={{ once: true }}
                         >
                             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-                                Watch our video explanation to see how it works
+                                See what your app can look like ان شاء الله with our <strong>live demo</strong>
                             </h3>
                             <ArrowDown className="w-8 h-8 text-teal-500 animate-bounce" />
                         </motion.div>

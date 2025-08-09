@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import {
-    BookOpen, Award, MessageSquare, Calendar, Tag, CreditCard,
-    Zap, Shield, ArrowUpRight, HeartHandshake
+    Clock, Award, MessageSquare, Calendar, Tag,
+    Zap, Shield, ArrowUpRight, HeartHandshake, BookOpen,
+    FileX, FolderCheck, Smartphone, ShieldAlert, BarChart4, GanttChartSquare,
+    TableProperties,
+    ArrowDownNarrowWide
 } from 'lucide-react';
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,9 +35,9 @@ export default function IntroSection() {
                 aria-labelledby="main-heading"
             >
                 <div className="mx-auto text-center mb-6 w-full">
-                    <motion.h1
+                    <motion.div
                         id="main-heading"
-                        className="text-3xl sm:text-4xl font-bold mb-4"
+                        className="text-4xl sm:text-4xl font-bold mb-4 -py-5"
                         variants={itemVariants}
                         itemProp="headline"
                     >
@@ -42,9 +45,9 @@ export default function IntroSection() {
                             Why You Can't Reach Your Potential
                         </span>
                         <span className="text-2xl sm:text-3xl font-normal block bg-gradient-to-r from-teal-400 to-indigo-400 bg-clip-text text-transparent pb-2"> {/* Added padding-bottom */}
-                            6 Things Stopping You From Reaching Your Audience
+                            6 Things Stopping You From Helping <span className="text-purple-600 dark:text-purple-400">More Muslims</span>
                         </span>
-                    </motion.h1>
+                    </motion.div>
                 </div>
 
                 {/* Responsive Grid Layout */}
@@ -56,50 +59,56 @@ export default function IntroSection() {
                     {/* Simple Problem Cards */}
                     {[
                         {
-                            icon: BookOpen,
-                            title: "Don't Know How You Teach",
-                            description: "They can't see what makes your classes <strong class='text-purple-600 dark:text-purple-400'>special</strong>",
+                            icon: Clock,
+                            title: "Spending hours on repetitive tasks",
+                            description: "Your agency spends <strong class='text-purple-600 dark:text-purple-400'>countless hours</strong> filling pilgrim personal details across multiple systems",
                             color: "bg-gradient-to-br from-purple-500 to-indigo-500",
+                            titleColor: "bg-gradient-to-br from-purple-400 to-indigo-400 bg-clip-text text-transparent",
                             border: "border-l-purple-500",
                             numColor: "bg-purple-500"
                         },
                         {
-                            icon: Award,
-                            title: "Hard time building trust",
-                            description: "Students have a hard time finding <strong class='text-indigo-600 dark:text-indigo-300'>teaching certificates</strong>",
+                            icon: BookOpen,
+                            title: "Quirky document management",
+                            description: "<strong class='text-indigo-600 dark:text-indigo-300'>Chasing documents</strong> trying to know who submitted what and when",
                             color: "bg-gradient-to-br from-indigo-500 to-blue-500",
+                            titleColor: "bg-gradient-to-br from-indigo-400 to-blue-400 bg-clip-text text-transparent",
                             border: "border-l-indigo-500",
                             numColor: "bg-indigo-500"
                         },
                         {
                             icon: MessageSquare,
-                            title: "Good Reviews Get Lost",
-                            description: "Happy student messages <strong class='text-blue-600 dark:text-blue-300'>disappear</strong> in social media",
+                            title: "Too Many Inquiries",
+                            description: "Pilgrims <strong class='text-blue-600 dark:text-blue-300'>constantly asking</strong> for flight times, hotel names, and schedule details",
                             color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+                            titleColor: "bg-gradient-to-br from-blue-400 to-cyan-400 bg-clip-text text-transparent",
                             border: "border-l-blue-500",
                             numColor: "bg-blue-500"
                         },
                         {
                             icon: Calendar,
-                            title: "Don't Know When You Teach",
-                            description: "They leave when they don't know <strong class='text-cyan-600 dark:text-cyan-300'>when you teach</strong>",
+                            title: "Running around to find important information",
+                            description: "Relying on paper or calls back home can be <strong class='text-cyan-600 dark:text-cyan-300'>unreliable and potentially dangerous</strong> in an emergency",
                             color: "bg-gradient-to-br from-cyan-500 to-teal-500",
+                            titleColor: "bg-gradient-to-br from-cyan-400 to-teal-400 bg-clip-text text-transparent",
                             border: "border-l-cyan-500",
                             numColor: "bg-cyan-500"
                         },
                         {
                             icon: Tag,
-                            title: "Price Not Clear",
-                            description: "Students worry when they don't see <strong class='text-teal-600 dark:text-teal-300'>the cost</strong>",
+                            title: "Slow Pilgrim Enrollment",
+                            description: "Rapid scaling is difficult without making changes that <strong class='text-teal-600 dark:text-teal-300'>eat into profit margins</strong>",
                             color: "bg-gradient-to-br from-teal-500 to-emerald-500",
+                            titleColor: "bg-gradient-to-br from-teal-400 to-emerald-400 bg-clip-text text-transparent",
                             border: "border-l-teal-500",
                             numColor: "bg-teal-500"
                         },
                         {
-                            icon: CreditCard,
-                            title: "Sign Up Too Hard",
-                            description: "Good students leave if <strong class='text-emerald-600 dark:text-emerald-300'>joining is difficult</strong>",
+                            icon: TableProperties,
+                            title: "Lack of Centralized Control",
+                            description: "Spreadsheets make it <strong class='text-emerald-600 dark:text-emerald-300'>harder to solve data-driven problems</strong> for future packages and profitability",
                             color: "bg-gradient-to-br from-emerald-500 to-green-500",
+                            titleColor: "bg-gradient-to-br from-emerald-400 to-green-400 bg-clip-text text-transparent",
                             border: "border-l-emerald-500",
                             numColor: "bg-emerald-500"
                         }
@@ -118,7 +127,7 @@ export default function IntroSection() {
                                         <div className={`p-2 rounded-lg ${item.color} text-white`}>
                                             <IconComponent className="w-5 h-5" />
                                         </div>
-                                        <CardTitle className="text-lg md:text-xl">{item.title}</CardTitle>
+                                        <CardTitle className={`text-lg font-extrabold md:text-xl ${item.titleColor}`}>{item.title}</CardTitle>
                                     </div>
                                 </CardHeader>
                                 <CardContent>
@@ -133,48 +142,102 @@ export default function IntroSection() {
                 </motion.div>
 
                 <motion.div
-                    className="text-center mt-8 bg-gradient-to-r from-indigo-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-8 max-w-4xl mx-auto border border-indigo-100 dark:border-gray-700"
+                    className="text-center mt-8 bg-gradient-to-r from-indigo-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-8 max-w-6xl mx-auto border border-indigo-100 dark:border-gray-700"
                     variants={itemVariants}
                     transition={{ delay: 1 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <motion.h2
-                        className="text-3xl sm:text-4xl font-bold mb-4"
+                    <motion.div
+                        className="mb-10"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.2 }}
                     >
-                        <span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent">
-                            A Website Fixes All These Problems باذن الله
-                        </span>
-                    </motion.h2>
+                        <motion.h2
+                            className="leading-[3] py-5 align-bottom inline-block text-3xl sm:text-5xl sm:leading-[0.5] font-bold mb-6 bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent"
+                            initial={{ scale: 0.95 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: "spring", stiffness: 300, delay: 1.3 }}
+                        >
+                            Transform Your Pilgrim Management
+                        </motion.h2>
+                        <motion.h3
+                            className="leading-[4] py-5 text-3xl sm:text-5xl sm:leading-[0.5] font-bold mb-6 bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent"
+                            initial={{ scale: 0.95 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: "spring", stiffness: 300, delay: 1.3 }}
+                        >
+                            ان شاء الله
+                        </motion.h3>
+                    </motion.div>
 
-                    <motion.p
-                        className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-6"
+                    <motion.div
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 1.4 }}
+                        transition={{ delay: 1.7 }}
                     >
-                        Start <span className="font-bold text-indigo-600 dark:text-indigo-400">speeding up your success</span> with your own website that:
-                    </motion.p>
-
-                    <div className="flex flex-wrap justify-center gap-4 mt-6">
                         {[
-                            { icon: Zap, text: "Answers frequently asked questions anytime" },
-                            { icon: Shield, text: "Lets people know your program is the best option" },
-                            { icon: ArrowUpRight, text: "Increases the rate of visitors into students" },
-                            { icon: HeartHandshake, text: "Makes interactions more meaningful and stronger" }
-                        ].map((item, idx) => {
-                            const IconComponent = item.icon;
-                            return (
-                                <div key={idx} className="flex items-center bg-white dark:bg-gray-700 px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">
-                                    <IconComponent className="w-5 h-5 text-teal-500 mr-2" />
-                                    <span className="font-medium text-gray-700 dark:text-gray-200">{item.text}</span>
-                                </div>
-                            )
-                        })}
-                    </div>
+                            {
+                                icon: FileX,
+                                title: "Eliminate Costly Errors",
+                                description: "Stop <strong class='text-purple-400 dark:text-purple-400'>wasting time</strong> manually inputting pilgrim details across conflicting systems"
+                            },
+                            {
+                                icon: FolderCheck,
+                                title: "Flawless Document Management",
+                                description: "Manage pilgrim paperwork with modern tech for <strong class='text-purple-400 dark:text-purple-400'>instant organization</strong>"
+                            },
+                            {
+                                icon: Smartphone,
+                                title: "Instant Information Access",
+                                description: "Give pilgrims <strong class='text-purple-400 dark:text-purple-400'>24/7 self-service access</strong> to their personalized details"
+                            },
+                            {
+                                icon: ShieldAlert,
+                                title: "Critical Info On-Hand",
+                                description: "<strong class='text-purple-400 dark:text-purple-400'>Securely store</strong> medical details, passports & emergency contacts"
+                            },
+                            {
+                                icon: BarChart4,
+                                title: "Scale Pilgrim Volume",
+                                description: "Handle more pilgrims with your existing team <strong class='text-purple-400 dark:text-purple-400'>without constant hiring</strong>"
+                            },
+                            {
+                                icon: GanttChartSquare,
+                                title: "Total Operational Control",
+                                description: "Centralize all pilgrim data for <strong class='text-purple-400 dark:text-purple-400'>smarter, data-driven decisions</strong>"
+                            }
+                        ].map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 1.8 + idx * 0.1 }}
+                            >
+                                <Card className="bg-white dark:bg-gray-800 p-7 rounded-xl shadow-lg hover:shadow-xl transition-all border-0 h-full flex flex-col">
+                                    <CardContent className="flex flex-col items-center text-center p-0">
+                                        <div className="bg-indigo-100 dark:bg-indigo-900/40 p-4 rounded-2xl mb-5">
+                                            <item.icon className="w-12 h-12 text-indigo-600 dark:text-indigo-400" />
+                                        </div>
+
+                                        {/* Fixed gradient title with descender support */}
+                                        <CardTitle className="relative text-2xl font-extrabold mb-4">
+                                            <span className="bg-gradient-to-r from-emerald-200 to-teal-500 dark:from-indigo-200 dark:to-pink-200 bg-clip-text text-transparent pb-[0.15em]">
+                                                {item.title}
+                                            </span>
+                                        </CardTitle>
+
+                                        <div
+                                            className="text-lg text-gray-700 dark:text-gray-300 mb-2"
+                                            dangerouslySetInnerHTML={{ __html: item.description }}
+                                        />
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </motion.div>
             </motion.section>
         </>

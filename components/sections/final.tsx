@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react';
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { Button } from '../ui/button';
-import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck } from 'lucide-react';
+import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck, Info, Compass, Heart } from 'lucide-react';
 import {
     XCircle, CheckCircle, DollarSign, Clock, AlertCircle, Turtle,
     ShieldOff, Headphones, Zap, Search, PiggyBank, Gauge, Code,
-    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight, Check, Share2
+    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight, Check, Share2, Volume2
 } from 'lucide-react';
 import {
     LayoutTemplate,
@@ -54,7 +54,8 @@ const icons = {
     Award: Award,
     CreditCard: CreditCard,
     Users: Users,
-    Globe: Globe
+    Globe: Globe,
+    Volume2: Volume2
 }
 
 export default function FinalSection() {
@@ -79,10 +80,10 @@ export default function FinalSection() {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     <span className="block bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent mb-2">
-                        Is Social Media Really Enough for Your Teaching?
+                        Is WhatsApp and Spreadsheets Enough To Really Grow?
                     </span>
                     <span className="text-lg font-normal text-gray-600 dark:text-gray-300">
-                        Most Teachers Use <span className='font-bold'>Only</span> Social Media To Share Important Program Details - <span className='font-bold'>But This Will</span> <span className='font-bold text-amber-500'>Hold You Back</span>
+                        Scaling Your Company Using <span className='font-bold'>The Norm</span> Will Keep You <span className='font-bold'>Spending Hours</span> That Is <span className='font-bold text-amber-500'>Keeping Your Team Behind</span>
                     </span>
                 </motion.h2>
 
@@ -97,7 +98,7 @@ export default function FinalSection() {
                         <div className="flex items-center gap-3 mb-6">
                             <XCircle className="w-8 h-8 text-rose-500" />
                             <h3 className="text-xl font-bold text-rose-600 dark:text-rose-400">
-                                The Social Media Only Trap
+                                Companies That Stick With The Norm
                             </h3>
                         </div>
 
@@ -105,28 +106,33 @@ export default function FinalSection() {
                             {[
                                 {
                                     icon: "EyeOff",
-                                    title: "Limited Visibility",
-                                    description: "Your posts get lost in crowded feeds quickly"
+                                    title: "Fragmented Data",
+                                    description: "Your team can spend 6 hours per trip just cross-referencing pilgrim data across various files and chats"
                                 },
                                 {
                                     icon: "MessageSquare",
-                                    title: "Hard to Stand Out",
-                                    description: "Difficult to show your special teaching skills"
+                                    title: "Communication Chaos",
+                                    description: "Your staff dedicates 25-30 hours in giving answers to repeated questions that have already been shared"
                                 },
                                 {
                                     icon: "Calendar",
-                                    title: "No Clear Schedule",
-                                    description: "Students can't easily see when you teach"
+                                    title: "Error Prone",
+                                    description: "One minor typo can lead to a visa rejection, possibly adding up to $100s of dollars lost in rebooking fees"
                                 },
                                 {
-                                    icon: "DollarSign",
-                                    title: "Missed Opportunities",
-                                    description: "No easy way for students to find out how to pay"
+                                    icon: "Clock",
+                                    title: "Limited Access",
+                                    description: "During an emergency abroad, it can take up to 30 crucial minutes to retrieve vital pilgrim medical details, delaying critical care and increasing risk"
                                 },
                                 {
                                     icon: "UserX",
-                                    title: "Uncommitted Messages",
-                                    description: "People reach out but don't follow through"
+                                    title: "Growth Blocked",
+                                    description: "To increase your pilgrim volume by just 20%, you’d possibly have to eat into 15-30% of profit margins for new administration hires"
+                                },
+                                {
+                                    icon: "DollarSign",
+                                    title: "Unclear Reviews",
+                                    description: "Blindly chasing 5-star reviews hides key sales data, hindering thousands in seasonal profits"
                                 }
                             ].map((item, idx) => {
                                 const Icon = icons[item.icon as IconKeys];
@@ -153,7 +159,7 @@ export default function FinalSection() {
                         <div className="flex items-center gap-3 mb-6">
                             <CheckCircle className="w-8 h-8 text-teal-500" />
                             <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">
-                                The Website Solution باذن الله
+                                Using a Custom App Solution باذن الله
                             </h3>
                         </div>
 
@@ -161,28 +167,33 @@ export default function FinalSection() {
                             {[
                                 {
                                     icon: "Search",
-                                    title: "24/7 Visibility",
-                                    description: "Your skills can always be seen, and in the best way"
+                                    title: "Centralized Data",
+                                    description: "Your team saves hours of time per trip by eliminating data cross-referencing"
                                 },
                                 {
                                     icon: "Award",
-                                    title: "Show Your Skills",
-                                    description: "Display your special teaching methods clearly"
+                                    title: "Clear Communication",
+                                    description: "Instant FAQ answers for pilgrims, every time"
                                 },
                                 {
                                     icon: "Clock",
-                                    title: "Easy Scheduling",
-                                    description: "Students see the times that you are available to teach easy"
+                                    title: "Error-Free Accuracy",
+                                    description: "Automate data entry for flawless records"
                                 },
                                 {
                                     icon: "Globe",
-                                    title: "Visible Payment Methods",
-                                    description: "Esay way for students to find out how to pay"
+                                    title: "Instant Access",
+                                    description: "Vital information is always at your fingertips"
                                 },
                                 {
                                     icon: "Users",
-                                    title: "Attract Serious Students",
-                                    description: "Only motivated students will reach out to you"
+                                    title: "Effortless Growth",
+                                    description: "Scale your agency without increasing workload"
+                                },
+                                {
+                                    icon: "DollarSign",
+                                    title: "Targetted Insight",
+                                    description: "An efficient system to capture specific review insights, unlocking thousands in optimized seasonal sales for your agency"
                                 }
                             ].map((item, idx) => {
                                 const Icon = icons[item.icon as IconKeys];
@@ -201,23 +212,24 @@ export default function FinalSection() {
                 </div>
 
                 {/* Missed Opportunity Calculator */}
-                <div className="mb-6 w-full mx-auto px-4 py-12 bg-gradient-to-r dark:from-slate-800 dark:to-slate-900 rounded-xl p-8 border border-slate-600">
+                <div className="mb-12 w-full mx-auto px-4 py-12 bg-gradient-to-r dark:from-slate-800 dark:to-slate-900 rounded-xl p-8 border border-slate-600">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
                         <div className="text-center md:text-left">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                                 The Potential You Might Be Missing
                             </h3>
                             <p className="text-gray-600 dark:text-gray-300 max-w-md">
-                                Many educators see significant growth when they complement social media with a professional website
+                                Many organizers see <span className="font-bold text-teal-600 dark:text-teal-400">Significant Growth</span> when they switch from traditional methods to a custom app solution باذن الله. <br />
+                                <span className="font-bold text-teal-600 dark:text-teal-400">Imagine</span> what you could achieve with a streamlined process that saves time and enhances pilgrim experience.
                             </p>
                         </div>
 
                         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                             <div className="flex flex-col gap-2">
                                 <div className="text-center">
-                                    <span className="text-sm text-gray-600 dark:text-gray-300">Typical Growth for Educators</span>
+                                    <span className="text-sm text-gray-600 dark:text-gray-300">Typical Growth for Travel Agencies</span>
                                     <div className="text-xl font-bold text-teal-600 dark:text-teal-400 mt-1">
-                                        Significant Increase in Serious Students
+                                        Significant Increase in Organizer Efficiency
                                     </div>
                                 </div>
                             </div>
@@ -234,23 +246,22 @@ export default function FinalSection() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
                                 <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
                                     <Users className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                    <h5 className="font-semibold">More Committed Students</h5>
+                                    <h5 className="font-semibold text-teal-500">An Easier Approach</h5>
                                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                        Attract students serious about learning
+                                        Help more muslims with your easy paperwork process
                                     </p>
                                 </div>
 
                                 <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
                                     <ArrowUpRight className="w-10 h-10 mx-auto text-teal-500 mb-2" />
-                                    <h5 className="font-semibold">Sustainable Growth</h5>
+                                    <h5 className="font-semibold text-teal-500">Sustainable Growth</h5>
                                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                        Consistent enrollment month after month
+                                        A chance to grow your agency without the stress of managing everything manually
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* New Content & Social Media Strategy Section */}
                         <motion.div
                             className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg p-6 border border-amber-200 dark:border-amber-700"
                             initial={{ opacity: 0, y: 20 }}
@@ -260,18 +271,18 @@ export default function FinalSection() {
                             <div className="flex flex-col md:flex-row items-start gap-6">
                                 <div className="text-center md:text-left flex-1">
                                     <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">
-                                        <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                                            People will join your class <br /> ان شاء الله
+                                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+                                            Young and old pilgrims will love this <br /> ان شاء الله
                                         </span>
                                     </h4>
                                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                                        A <span className="font-bold text-amber-600 dark:text-amber-400">in-depth content strategy</span> will build your social media and ensure you get the audience you need باذن الله
+                                        A <span className="font-bold text-amber-600 dark:text-amber-400">simple, easy going app solution</span> keeps everyone on the same playing field باذن الله
                                     </p>
 
                                     <div className="bg-amber-100 dark:bg-amber-900/30 rounded-lg p-4 mb-4">
                                         <p className="text-amber-800 dark:text-amber-200 text-sm">
                                             <span className="font-semibold">Note: </span>
-                                            Your involvement is providing your own relevant content. We do <strong>everything else for you</strong>
+                                            Our solution ensures <strong>every pilgrim</strong> has an equally accessible experience regardless of age or tech-savviness
                                         </p>
                                     </div>
                                 </div>
@@ -280,19 +291,19 @@ export default function FinalSection() {
                                     <div className="space-y-4">
                                         {[
                                             {
-                                                icon: <LayoutTemplate className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
-                                                title: "Strategy Development",
-                                                description: "We will choose for you the <strong>perfect strategy</strong> just for <strong>your audience</strong>"
+                                                icon: <Info className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                title: "Effortless Information",
+                                                description: "Access <strong>all details</strong> with a <strong>simple tap</strong>"
                                             },
                                             {
-                                                icon: <Video className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
-                                                title: "Content Creation",
-                                                description: "We will <strong>transform your raw content</strong> into polished, <strong>engaging masterpieces</strong>"
+                                                icon: <Compass className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                title: "Guided Journey",
+                                                description: "Follow <strong>clear steps</strong> from <strong>start to finish</strong>"
                                             },
                                             {
-                                                icon: <CalendarCheck className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
-                                                title: "Basic Management",
-                                                description: "We will <strong>schedule posts</strong> to <strong>build your community</strong>"
+                                                icon: <Heart className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
+                                                title: "Stress-Free Travel",
+                                                description: "Find <strong>what's needed</strong>, <strong>anytime, anywhere</strong>"
                                             }
                                         ].map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-3">
@@ -313,16 +324,16 @@ export default function FinalSection() {
                             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {[
                                     {
-                                        title: "Increased Visibility",
-                                        description: "Get your website and business seen by more potential students"
+                                        title: "Increased Confidence",
+                                        description: "Pilgrims feel secure and well-informed throughout their journey"
                                     },
                                     {
-                                        title: "Professional Image",
-                                        description: "Polished content enhances your credibility and authority"
+                                        title: "Smoother Experience",
+                                        description: "Reduces anxiety and friction for every traveler"
                                     },
                                     {
-                                        title: "Targeted Growth",
-                                        description: "Strategic approach ensures you reach the right audience"
+                                        title: "Positive Memories",
+                                        description: "Focus on spirituality rather than confusion and logistics"
                                     }
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg border border-amber-100 dark:border-amber-900/50">
@@ -348,9 +359,9 @@ export default function FinalSection() {
                                     </h4>
                                     <p className="text-gray-700 dark:text-gray-300 relative left-[-8px] sm:left-0"> {/* Shift text left on mobile */}
                                         We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
-                                        If more students don't come to your program <span className="font-bold">despite taking real action </span>
-                                        towards getting more students, we will continue to work with you
-                                        <span className="font-bold text-teal-300 dark:text-indigo-400"> for free</span> until you see results
+                                        If your program struggles <span className="font-bold">despite taking real action </span>
+                                        after you work with us for a modern alternative, we will continue to
+                                        <span className="font-bold text-teal-300 dark:text-indigo-400"> provide further revisions and support</span> until you see results
                                     </p>
                                 </div>
                             </div>
@@ -390,12 +401,12 @@ export default function FinalSection() {
                                     <Rocket className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-300" />
                                 </div>
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                                    We want to <span className='text-emerald-300'>see you grow</span> باذن الله
+                                    We want to help <span className='text-emerald-300'>more muslims</span> باذن الله
                                 </h3>
                             </div>
 
                             <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
-                                Our <span className="font-bold text-emerald-300">complete package</span> gives you everything you need:
+                                Our <span className="font-bold text-emerald-300">team will</span> gives you everything you need:
                             </p>
 
                             {/* Package Details - Stacked on mobile */}
@@ -405,21 +416,21 @@ export default function FinalSection() {
                                     <div className="flex flex-col sm:flex-row items-center justify-center mb-3">
                                         <LayoutTemplate className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-300 sm:mr-2 mb-2 sm:mb-0" />
                                         <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">
-                                            Professional Website
+                                            Professional App
                                         </h4>
                                     </div>
                                     <ul className="text-left text-sm sm:text-base text-slate-300 space-y-2 mt-3 sm:mt-4">
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Showcase your teaching expertise</span>
+                                            <span>Streamline Operations</span>
                                         </li>
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Accept bookings & payments easily</span>
+                                            <span>Boost Profitability</span>
                                         </li>
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Display student testimonials</span>
+                                            <span>Elevate Pilgrim Care</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -429,21 +440,21 @@ export default function FinalSection() {
                                     <div className="flex flex-col sm:flex-row items-center justify-center mb-3">
                                         <Share2 className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-300 sm:mr-2 mb-2 sm:mb-0" />
                                         <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">
-                                            Strategic Social Media Plan
+                                            Strategic Marketing Plan
                                         </h4>
                                     </div>
                                     <ul className="text-left text-sm sm:text-base text-slate-300 space-y-2 mt-3 sm:mt-4">
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Content strategy tailored to your audience</span>
+                                            <span>Lead Market Trends</span>
                                         </li>
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Platform-specific engagement techniques</span>
+                                            <span>Forge Deeper Loyalty</span>
                                         </li>
                                         <li className="flex items-start">
                                             <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" />
-                                            <span>Consistent branding across all platforms</span>
+                                            <span>Outperform Competitors</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -451,14 +462,14 @@ export default function FinalSection() {
 
                             {/* Benefits Section */}
                             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-4 sm:mb-6 px-2">
-                                Together, these give you the power to:
+                                Together, these give you the power to ان شاء الله:
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto mb-6 sm:mb-8">
                                 {[
-                                    "Attract serious students",
-                                    "Establish authority",
-                                    "Grow sustainably"
+                                    "Dominate the Market",
+                                    "Transform Your Business",
+                                    "Secure Lasting Growth"
                                 ].map((item, idx) => (
                                     <motion.div
                                         key={idx}
@@ -526,7 +537,7 @@ export default function FinalSection() {
                             {/* Section header */}
                             <div className="mb-10">
                                 <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                                    Ready to Reach More Students Starting Today?
+                                    Ready to Shake The Market Forever? ان شاء الله
                                 </h3>
                                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                                     Everyone is different. Let's make a plan that works for you ان شاء الله
@@ -571,7 +582,7 @@ export default function FinalSection() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />
-                                        <span>Reach more students</span>
+                                        <span>Reach more muslims</span>
                                     </div>
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />
@@ -579,10 +590,14 @@ export default function FinalSection() {
                                     </div>
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />
-                                        <span>Grow your teaching</span>
+                                        <span>Grow your agency</span>
                                     </div>
                                 </div>
                             </div>
+
+                            <h1 className='font-bold text-emerald-200 mt-10 text-2xl'>
+                                ان شاء الله
+                            </h1>
                         </motion.div>
                     </div>
 

@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -130,13 +131,9 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  body {
-    @apply bg-background text-foreground;
+@media (prefers-color-scheme: dark) {
+  .gradient-text {
+    background-image: linear-gradient(to right, #818cf8, #5eead4) !important;
   }
 }
 
