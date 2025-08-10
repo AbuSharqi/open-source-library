@@ -360,8 +360,8 @@ export default function FinalSection() {
                                     <p className="text-gray-700 dark:text-gray-300 relative left-[-8px] sm:left-0"> {/* Shift text left on mobile */}
                                         We work for <span className="font-bold text-indigo-600 dark:text-indigo-400">quality, not quantity</span>.
                                         If your program struggles <span className="font-bold">despite taking real action </span>
-                                        after you work with us for a modern alternative, we will continue to
-                                        <span className="font-bold text-teal-300 dark:text-indigo-400"> provide further revisions and support</span> until you see results
+                                        after you work with us for a modern alternative, we will provide you a
+                                        <span className="font-bold text-teal-300 dark:text-indigo-400"> full refund</span> at your request
                                     </p>
                                 </div>
                             </div>
