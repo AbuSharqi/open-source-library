@@ -228,94 +228,6 @@ export default function StepsSection() {
                         <span className="block mt-2 text-3xl text-emerald-600">إن شاء الله</span>
                     </motion.h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {/* Without App Solution */}
-                        <motion.div
-                            className="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 p-6 rounded-2xl border border-rose-200 dark:border-rose-800"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: .5 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="text-rose-600 dark:text-rose-400 font-bold text-xl mb-4">Without An App Solution</div>
-                            <ul className="space-y-4 text-left text-gray-700 dark:text-gray-300">
-                                <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-rose-600">Administrative Overload:</strong> Your team buried under paperwork and manual tasks, leading to burnout
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-rose-600">Increased Error Risk:</strong> Costly mistakes in documents and bookings due to manual processes
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-rose-600">Fragmented Communication:</strong> Information scattered across emails and messages, causing delays
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-rose-600">Limited Scalability:</strong> Growth requires proportional staff increases, cutting into profits
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <XCircle className="w-5 h-5 text-rose-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-rose-600">Reactive Operations:</strong> Constantly solving problems instead of proactive management
-                                    </div>
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        {/* With App Solution */}
-                        <motion.div
-                            className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-teal-200 dark:border-teal-800"
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="text-teal-600 dark:text-teal-400 font-bold text-xl mb-4">With Our App Solution</div>
-                            <ul className="space-y-4 text-left text-gray-700 dark:text-gray-300">
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-teal-600">Streamlined Efficiency:</strong> Automate repetitive tasks and free your team for higher-value service
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-teal-600">Enhanced Accuracy:</strong> Digital validation ensures precise documents and regulatory compliance
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-teal-600">Empowered Pilgrims:</strong> 24/7 access to information reduces inquiries and improves experience
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-teal-600">Sustainable Growth:</strong> Scale operations without proportional staff increases
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                        <strong className="text-teal-600">Strategic Command:</strong> Real-time data enables proactive decisions and competitive advantage
-                                    </div>
-                                </li>
-                            </ul>
-                        </motion.div>
-                    </div>
-
                     {/* CTA */}
 
                     <motion.div
@@ -325,13 +237,6 @@ export default function StepsSection() {
                         transition={{ delay: .5 }}
                         viewport={{ once: true }}
                     >
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-8">
-                            <p className="text-gray-600 dark:text-gray-300 italic">
-                                These outcomes are based on implementing professional website best practices.
-                                Actual results come with Allah's permission as we provide the means while He provides the results.
-                            </p>
-                        </div>
-
                         <motion.div
                             className="flex flex-col items-center"
                             animate={{ y: [0, -10, 0] }}

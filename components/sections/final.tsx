@@ -209,6 +209,14 @@ export default function FinalSection() {
                             })}
                         </ul>
                     </motion.div>
+
+
+                    <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-8 mx-auto">
+                        <p className="text-gray-600 dark:text-gray-300 italic">
+                            These outcomes are based on implementing professional website best practices.
+                            Actual results come with Allah's permission as we provide the means while He provides the results.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Missed Opportunity Calculator */}
