@@ -24,19 +24,20 @@ const itemVariants = {
 };
 
 export default function FormSection() {
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: ''
     });
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
 
     // Check localStorage on component mount
     useEffect(() => {
         const submitted = localStorage.getItem('formSubmitted');
         if (submitted === 'true') {
-            setFormSubmitted(true);
+            setIsSubmitted(true);
         }
     }, []);
 
@@ -51,7 +52,7 @@ export default function FormSection() {
 
         try {
             // Formspree endpoint - replace with your actual Formspree ID
-            const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+            const response = await fetch("https://formspree.io/f/mvgqlngz", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +62,7 @@ export default function FormSection() {
 
             if (response.ok) {
                 localStorage.setItem('formSubmitted', 'true');
-                setFormSubmitted(true);
+                setIsSubmitted(true);
             }
         } catch (error) {
             console.error('Form submission error:', error);
@@ -85,43 +86,36 @@ export default function FormSection() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    {/* Image Preview */}
-                    <Link
-                        href="https://https://yusr-solutions.github.io/app-demo/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <motion.div
+                        className="group relative rounded-xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800"
+                        whileHover={{ scale: 1 }}
+                        transition={{ duration: 0.3 }}
                     >
-                        <motion.div
-                            className="cursor-pointer group relative rounded-xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800"
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <div className="relative aspect-video w-full h-auto min-h-[300px]">
-                                <Image
-                                    src={DemoScreenshot}
-                                    alt="Quranic Studies Academy Website Preview"
-                                    fill
-                                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
-                                    quality={90}
-                                    priority={true}
-                                />
+                        <div className="relative aspect-video w-full h-auto min-h-[300px]">
+                            <Image
+                                src={DemoScreenshot}
+                                alt="Demo Preview"
+                                fill
+                                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                                quality={90}
+                                priority={true}
+                            />
 
-                                {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                                {/* Content overlay */}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-                                    <h3 className="text-xl md:text-2xl font-bold">Pilgrim Path Demo</h3>
-                                    <p className="text-gray-200 mt-1">Pilgrim Journey Hub</p>
-                                    <p className="text-gray-200 mt-1">(For Demonstration Purposes Only)</p>
-                                </div>
-
-                                {/* Hover effect */}
-                                <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/10" />
+                            {/* Content overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
+                                <h3 className="text-xl md:text-2xl font-bold">Pilgrim Path Demo</h3>
+                                <p className="text-gray-200 mt-1">Pilgrim Journey Hub</p>
+                                <p className="text-gray-200 mt-1">(For Demonstration Purposes Only)</p>
                             </div>
-                        </motion.div>
-                    </Link>
+
+                            {/* Hover effect */}
+                            <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/10" />
+                        </div>
+                    </motion.div>
 
                     {/* Content */}
                     <div>
@@ -136,7 +130,7 @@ export default function FormSection() {
                                 This demo showcases how we can make the exact system we use to make your workflow seemless. It includes:
                             </p>
 
-                            {formSubmitted ? (
+                            {isSubmitted ? (
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -151,7 +145,7 @@ export default function FormSection() {
                                             Thank you for your submission. You can now access the demo.
                                         </p>
                                         <a
-                                            href="https://https://yusr-solutions.github.io/app-demo/"
+                                            href="https://yusr-solutions.github.io/app-demo/"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none bg-gradient-to-r from-purple-600 to-teal-500 text-white hover:from-purple-700 hover:to-teal-600 h-11 px-6 py-3 w-full max-w-xs"
@@ -222,6 +216,8 @@ export default function FormSection() {
                                                 placeholder="+1 (555) 123-4567"
                                             />
                                         </div>
+
+                                        <input type="hidden" name="_gotcha" className="hidden" />
 
                                         <button
                                             type="submit"
