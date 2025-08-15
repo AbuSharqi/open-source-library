@@ -9,10 +9,9 @@ import { motion, LazyMotion, domAnimation } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import IntroSection from "@/components/sections/intro";
 import Intro2Section from "@/components/sections/intro2";
-import StepsSection from "@/components/sections/steps";
 import { ArrowDown } from "lucide-react";
 import FinalSection from "@/components/sections/final";
-import WorkSection from "@/components/sections/work";
+import FormSection from "@/components/sections/form";
 
 const SEOAnimator = ({ children }: { children: React.ReactNode }) => (
   <LazyMotion features={domAnimation}>{children}</LazyMotion>
@@ -75,9 +74,26 @@ export default function Home() {
             >
               {/* All sections will be perfectly centered */}
               <IntroSection />
+              <motion.section
+                className="w-full"
+                variants={itemVariants}
+                aria-label="Demo video"
+              >
+                <div className="max-w-4xl mx-auto"> {/* Constrained container */}
+                  <div className="relative aspect-video rounded-xl shadow-xl overflow-hidden mx-4 md:mx-0"> {/* Responsive margins */}
+                    <iframe
+                      src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
+                      title="Website Process Demo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      frameBorder="0"
+                    />
+                  </div>
+                </div>
+              </motion.section>
+              <FormSection />
               <Intro2Section />
-              <StepsSection />
-              <WorkSection />
               <FinalSection />
             </motion.main>
 
