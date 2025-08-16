@@ -82,8 +82,8 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto"> {/* Constrained container */}
                   <div className="relative aspect-video rounded-xl shadow-xl overflow-hidden mx-4 md:mx-0"> {/* Responsive margins */}
                     <iframe
-                      src="https://www.youtube.com/embed/KUV0Talgl1k?rel=0&modestbranding=1"
-                      title="Website Process Demo"
+                      src="https://www.youtube.com/embed/ga9CbPZgOYI"
+                      title="App Process Demo"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
