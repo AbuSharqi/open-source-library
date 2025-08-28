@@ -107,75 +107,78 @@ export default function Page() {
                             </p>
                         </div>
 
-                        <form onSubmit={handleCalculate} className="space-y-6">
-                            <div className="space-y-2">
-                                <Label htmlFor="profit">
-                                    Average Profit per Booking ($)
-                                </Label>
+                        <form onSubmit={handleCalculate} className="">
+                            {/* The space-y-8 class adds vertical spacing between form fields */}
+                            <div className="space-y-8">
                                 <div>
-                                    <Input
-                                        id="profit"
-                                        type="number"
-                                        step="0.1"
-                                        value={profitPerBooking}
-                                        onChange={(e) => setProfitPerBooking(Number(e.target.value))}
-                                        required
-                                    />
+                                    <Label htmlFor="profit">
+                                        Average Profit per Booking ($)
+                                    </Label>
+                                    <div className="mt-2">
+                                        <Input
+                                            id="profit"
+                                            type="number"
+                                            step="0.1"
+                                            value={profitPerBooking}
+                                            onChange={(e) => setProfitPerBooking(Number(e.target.value))}
+                                            required
+                                        />
+                                    </div>
+                                    <p className="text-sm text-gray-400 mt-1">e.g., $500 per person on an Umrah package</p>
                                 </div>
-                                <p className="text-sm text-gray-400">e.g., $500 per person on an Umrah package</p>
+
+                                <div>
+                                    <Label htmlFor="spend">
+                                        Current Monthly Marketing Spend ($)
+                                    </Label>
+                                    <div className="mt-2">
+                                        <Input
+                                            id="spend"
+                                            type="number"
+                                            step="0.1"
+                                            value={monthlySpend}
+                                            onChange={(e) => setMonthlySpend(Number(e.target.value))}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="visitors">
+                                        Average Monthly Website Visitors
+                                    </Label>
+                                    <div className="mt-2">
+                                        <Input
+                                            id="visitors"
+                                            type="number"
+                                            step="0.1"
+                                            value={monthlyVisitors}
+                                            onChange={(e) => setMonthlyVisitors(Number(e.target.value))}
+                                            required
+                                        />
+                                    </div>
+                                    <p className="text-sm text-gray-400 mt-1">Suggested: 1,000 if you're not sure</p>
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="conversion">
+                                        Current Website Conversion Rate (%)
+                                    </Label>
+                                    <div className="mt-2">
+                                        <Input
+                                            id="conversion"
+                                            type="number"
+                                            step="0.1"
+                                            value={conversionRate}
+                                            onChange={(e) => setConversionRate(Number(e.target.value))}
+                                            required
+                                        />
+                                    </div>
+                                    <p className="text-sm text-gray-400 mt-1">Percentage of visitors who become customers</p>
+                                </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="spend">
-                                    Current Monthly Marketing Spend ($)
-                                </Label>
-                                <div>
-                                    <Input
-                                        id="spend"
-                                        type="number"
-                                        step="0.1"
-                                        value={monthlySpend}
-                                        onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label htmlFor="visitors">
-                                    Average Monthly Website Visitors
-                                </Label>
-                                <div>
-                                    <Input
-                                        id="visitors"
-                                        type="number"
-                                        step="0.1"
-                                        value={monthlyVisitors}
-                                        onChange={(e) => setMonthlyVisitors(Number(e.target.value))}
-                                        required
-                                    />
-                                </div>
-                                <p className="text-sm text-gray-400">Suggested: 1,000 if you're not sure</p>
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label htmlFor="conversion">
-                                    Current Website Conversion Rate (%)
-                                </Label>
-                                <div>
-                                    <Input
-                                        id="conversion"
-                                        type="number"
-                                        step="0.1"
-                                        value={conversionRate}
-                                        onChange={(e) => setConversionRate(Number(e.target.value))}
-                                        required
-                                    />
-                                </div>
-                                <p className="text-sm text-gray-400">Percentage of visitors who become customers</p>
-                            </div>
-
-                            <div className="flex gap-4 pt-4">
+                            <div className="flex gap-4 pt-10">
                                 <Button
                                     variant='secondary'
                                     className='bg-slate-200 text-slate-900'

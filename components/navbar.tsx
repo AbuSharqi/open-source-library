@@ -34,7 +34,7 @@ export const Navbar = () => {
             }
         } else {
             // If not on the homepage, redirect to the homepage URL with the hash
-            window.location.href = '/#contact-section';
+            window.location.href = '/umrah-company-marketing-solutions/#contact-section';
         }
     };
 
@@ -50,7 +50,7 @@ export const Navbar = () => {
                         >
                             <Feather className="w-6 h-6 text-purple-600" />
                             <span className="mr-5 font-semibold text-lg bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                Yusr (يُسْر)
+                                Yusr Solutions
                             </span>
                         </div>
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
                                 </Button>
                             </Link>
                             <Link
-                                href="/#contact-section" // Set the href for standard navigation
+                                href="" // Set the href for standard navigation
                                 onClick={handleContactClick} // Use our custom handler
                                 className="text-slate-400 hover:text-purple-400 transition-colors duration-300 font-medium"
                             >
@@ -108,7 +108,7 @@ export const Navbar = () => {
                                     </Button>
                                 </Link>
                                 <Link
-                                    href="/#contact-section" // Set the href for standard navigation
+                                    href="/" // Set the href for standard navigation
                                     onClick={handleContactClick} // Use our custom handler
                                     className="text-slate-400 hover:text-purple-400 transition-colors duration-300 font-medium"
                                 >

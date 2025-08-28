@@ -58,7 +58,7 @@ export default function ResourcesPage() {
                         className="space-y-6"
                     >
                         <Card className="bg-gray-800 text-gray-100 border border-gray-700">
-                            <CardHeader className="flex flex-row items-center space-x-4">
+                            <CardHeader className="flex flex-row items-center space-x-10 gap-5">
                                 <FileText className="h-6 w-6 text-blue-400" />
                                 <div>
                                     <CardTitle className="text-2xl font-bold">Blog Posts</CardTitle>
@@ -69,7 +69,7 @@ export default function ResourcesPage() {
                             </CardHeader>
                         </Card>
                         {/* You can list your blog posts here with descriptions */}
-                        <ul className="space-y-6 text-gray-300">
+                        <ul className="space-y-12 text-gray-300 relative mt-5">
                             <li>
                                 <Link href="/blog/how-to-grow-umrah-company" className="text-lg text-teal-400 hover:text-teal-300 transition-colors">
                                     How to Get More People to Know About Your Umrah Company
@@ -94,7 +94,7 @@ export default function ResourcesPage() {
                         className="space-y-6"
                     >
                         <Card className="bg-gray-800 text-gray-100 border border-gray-700">
-                            <CardHeader className="flex flex-row items-center space-x-4">
+                            <CardHeader className="flex flex-row items-center space-x-10 gap-5">
                                 <Wrench className="h-6 w-6 text-emerald-400" />
                                 <div>
                                     <CardTitle className="text-2xl font-bold">Tools</CardTitle>
@@ -105,7 +105,7 @@ export default function ResourcesPage() {
                             </CardHeader>
                         </Card>
                         {/* You can list your tools here with descriptions */}
-                        <ul className="space-y-6 text-gray-300">
+                        <ul className="space-y-6 text-gray-300 relative mt-5">
                             <li>
                                 <Link href="/calculate-your-marketing-profits" className="text-lg text-teal-400 hover:text-teal-300 transition-colors">
                                     See Your Potential Profit from Online Marketing
