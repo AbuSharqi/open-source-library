@@ -61,7 +61,7 @@ const icons = {
 export default function FinalSection() {
     useEffect(() => {
         (async function () {
-            const cal = await getCalApi({ "namespace": "strategy-session" });
+            const cal = await getCalApi({ "namespace": "planning-session" });
             cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
         })();
     }, [])
@@ -103,10 +103,10 @@ export default function FinalSection() {
                             {/* Section header */}
                             <div className="mb-10">
                                 <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                                    Ready to Take That Final Step?
+                                    Need a hand? We're here for you.
                                 </h3>
                                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                                    Everyone's situation is different. We would love to make a plan for your <span className='font-bold'>agency's needs ان شاء الله.</span>
+                                    If you ever get stuck figuring out your playbook, or just need some help with your next move, we'd love to assist. We can work with you to create a plan that fits your agency's unique needs, insha'Allah.
                                 </p>
                             </div>
 
@@ -117,11 +117,11 @@ export default function FinalSection() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
                             >
-                                <p className="text-3xl font-arabic mb-4 text-emerald-800 dark:text-emerald-200 leading-loose md:leading-normal">﴾ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانْتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِنْ فَضْلِ اللَّهِ﴿</p>
+                                <p className="text-3xl font-arabic mb-4 text-emerald-800 dark:text-emerald-200 leading-loose md:leading-normal">﴾ إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ ﴿</p>
                                 <p className="text-lg text-emerald-700 dark:text-emerald-300 italic">
-                                    "And when the prayer has been concluded, disperse within the land and seek from the bounty of Allāh..."
+                                    "The believers are but a single brotherhood, so make peace and reconciliation between your brothers."
                                 </p>
-                                <p className="mt-2 text-slate-600 dark:text-slate-400">- Al-Jumu'ah (62:10)</p>
+                                <p className="mt-2 text-slate-600 dark:text-slate-400">- Al-Hujurat (49:10)</p>
                             </motion.div>
 
                             {/* Contact options */}
@@ -137,8 +137,8 @@ export default function FinalSection() {
                             </div>
 
 
-                            <Cal namespace="strategy-session"
-                                calLink="yusr.solutions/free-discovery-call"
+                            <Cal namespace="planning-session"
+                                calLink="yusr.solutions/planning-session"
                                 style={{ width: "100%", height: "100%", overflow: "scroll" }}
                                 config={{ "layout": "month_view" }}
                             />
@@ -152,7 +152,7 @@ export default function FinalSection() {
                                     </div>
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />
-                                        <span>Build with Us</span>
+                                        <span>Bring Traffic</span>
                                     </div>
                                     <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
                                         <ArrowRight className="w-5 h-5" />

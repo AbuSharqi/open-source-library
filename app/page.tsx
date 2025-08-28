@@ -12,31 +12,11 @@ import Intro2Section from "@/components/sections/intro2";
 import { ArrowDown } from "lucide-react";
 import FinalSection from "@/components/sections/final";
 import FormSection from "@/components/sections/form";
+import { containerVariants, itemVariants, cardVariants } from "@/lib/motionVariants";
 
 const SEOAnimator = ({ children }: { children: React.ReactNode }) => (
   <LazyMotion features={domAnimation}>{children}</LazyMotion>
 );
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
-
-const cardVariants = {
-  hidden: { scale: 0.95, opacity: 0 },
-  visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 300 } }
-};
 
 export default function Home() {
   const router = useRouter();
@@ -74,13 +54,13 @@ export default function Home() {
             >
               {/* All sections will be perfectly centered */}
               <IntroSection />
-              <motion.section
+              {/*<motion.section
                 className="w-full"
                 variants={itemVariants}
                 aria-label="Demo video"
               >
-                <div className="max-w-4xl mx-auto"> {/* Constrained container */}
-                  <div className="relative aspect-video rounded-xl shadow-xl overflow-hidden mx-4 md:mx-0"> {/* Responsive margins */}
+                <div className="max-w-4xl mx-auto"> {/* Constrained container
+                  <div className="relative aspect-video rounded-xl shadow-xl overflow-hidden mx-4 md:mx-0"> {/* Responsive margins
                     <iframe
                       src="https://www.youtube.com/embed/ga9CbPZgOYI"
                       title="App Process Demo"
@@ -91,9 +71,9 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </motion.section>
+              </motion.section>*/}
               <FormSection />
-              <Intro2Section />
+              {/*<Intro2Section />*/}
               <FinalSection />
             </motion.main>
 

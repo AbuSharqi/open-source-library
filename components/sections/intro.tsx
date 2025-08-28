@@ -34,27 +34,23 @@ export default function IntroSection() {
                 variants={containerVariants}
                 aria-labelledby="main-heading"
             >
-
                 <div className="text-center">
-                    <motion.h2
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="leading-[3] py-2 align-bottom inline-block md:block text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500"
+                        className="leading-[3] py-1 align-bottom inline-block md:block text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500"
                     >
-                        Scale Your Agency. Keep Your Profits.
-                    </motion.h2>
+                        Umrah & Hajj Company Marketing Solutions
+                    </motion.h1>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <p className="text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-300 to-emerald-300">
-                            Why You Can't Reach Your Potential
-                        </p>
                         <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-                        You have the potential—you just need the right path. My team and I found the exact reasons why so many travel agencies get stuck. Let's show you what's really going on ان شاء الله.
+                        Discover the digital marketing solutions for Umrah & Hajj service providers, from <span className='font-bold'>travel agencies to hotels and taxi companies</span>, who want to transform their <span className='font-bold'>online presence</span> to attract more <span className='font-bold'>pilgrims</span> and get <span className='font-bold'>direct bookings, Insha'Allah.</span>
                         </p>
                     </motion.div>
                 </div>
