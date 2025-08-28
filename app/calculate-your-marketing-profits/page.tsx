@@ -178,10 +178,10 @@ export default function Page() {
                                 </div>
                             </div>
 
-                            <div className="flex gap-4 pt-10">
+                            <div className="flex gap-4 py-10 mt-5">
                                 <Button
-                                    variant='secondary'
-                                    className='bg-slate-200 text-slate-900'
+                                    variant='outline'
+                                    className='text-slate-900'
                                     type="submit"
                                 >
                                     Calculate

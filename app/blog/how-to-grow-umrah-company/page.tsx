@@ -13,6 +13,7 @@ import { containerVariants } from "@/lib/motionVariants";
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
 import AuthorDate from '@/components/ui/author-date';
+import { BlogPlaybookCTA } from '@/components/ui/playbook-cta';
 
 export default function BlogPage() {
     return (
@@ -67,10 +68,10 @@ export default function BlogPage() {
 
                 {/* Marketing Pillars Section */}
                 <section className="w-full max-w-3xl mb-16 md:mb-20">
-                    <div className="space-y-12">
+                    <div className="flex flex-col gap-5">
                         <Card className="bg-gray-800 text-gray-100 rounded-2xl shadow-md border border-gray-700">
                             <CardContent className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-3 text-blue-400">
+                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-4 text-blue-400">
                                     <Search size={24} />
                                     1. Get Found on Google (SEO)
                                 </h3>
@@ -87,7 +88,7 @@ export default function BlogPage() {
 
                         <Card className="bg-gray-800 text-gray-100 rounded-2xl shadow-md border border-gray-700">
                             <CardContent className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-3 text-green-400">
+                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-4 text-green-400">
                                     <Users size={24} />
                                     2. Build a Community on Social Media
                                 </h3>
@@ -104,7 +105,7 @@ export default function BlogPage() {
 
                         <Card className="bg-gray-800 text-gray-100 rounded-2xl shadow-md border border-gray-700">
                             <CardContent className="p-6">
-                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-3 text-purple-400">
+                                <h3 className="text-2xl font-bold mb-3 flex items-center gap-4 text-purple-400">
                                     <Star size={24} />
                                     3. Cultivate Trust and Authority
                                 </h3>
@@ -122,40 +123,7 @@ export default function BlogPage() {
                 </section>
 
                 {/* Call to Action Section */}
-                <motion.section
-                    className="mx-auto flex flex-col gap-8 py-0 px-4 w-full"
-                    variants={containerVariants}
-                    aria-labelledby="main-heading"
-                >
-                    <div className="text-center">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="text-3xl leading=[3] py-2 md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500"
-                        >
-                            Claim Your Free Umrah Marketing Playbook.
-                        </motion.h1>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >
-                            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                                Get a free playbook and more insights on how to grow your Umrah and Hajj business.
-                            </p>
-                        </motion.div>
-
-                        <Link href={'/'}>
-                            <Button
-                                className='relative mt-12 cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none bg-gradient-to-r from-purple-600 to-teal-500 text-white hover:from-purple-700 hover:to-teal-600 h-11 px-6 py-3 w-full max-w-xs'
-                            >
-                                <Lightbulb className="w-4 h-4 mr-2" />
-                                Access My Playbook Now
-                            </Button>
-                        </Link>
-                    </div>
-                </motion.section>
+                <BlogPlaybookCTA />
             </motion.main>
 
             <CommonFooter />

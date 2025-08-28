@@ -106,7 +106,7 @@ export default function FinalSection() {
                                     Need a hand? We're here for you.
                                 </h3>
                                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                                    If you ever get stuck figuring out your playbook, or just need some help with your next move, we'd love to assist. We can work with you to create a plan that fits your agency's unique needs, insha'Allah.
+                                    If you ever get stuck figuring out your playbook, or just need some help with your next move, we'd love to assist. We can work with you to create a plan that fits your agency's unique needs, inSha'Allah.
                                 </p>
                             </div>
 

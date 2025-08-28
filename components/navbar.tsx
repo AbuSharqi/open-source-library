@@ -24,17 +24,21 @@ export const Navbar = () => {
     const handleContactClick = (e: React.FormEvent<HTMLAnchorElement>) => {
         // Prevent default link behavior to handle it with our custom logic
         e.preventDefault();
-
+    
         // Check if the current path is the homepage
-        if (pathname === '/') {
+        // Note: The homepage on GitHub Pages will have the repository name in the path
+        const isHomepage = window.location.pathname === '/umrah-company-marketing-solutions/' || window.location.pathname === 'umrah-company-marketing-solutions';
+    
+        if (isHomepage) {
             const target = document.querySelector('#contact-section');
             if (target) {
                 // Scroll down if on the homepage
                 target.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // If not on the homepage, redirect to the homepage URL with the hash
-            window.location.href = '/umrah-company-marketing-solutions/#contact-section';
+            // If not on the homepage, redirect to the homepage URL with the hash.
+            // The path now correctly includes the repository name.
+            router.push('/#contact-section')
         }
     };
 
