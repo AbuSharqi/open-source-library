@@ -69,7 +69,7 @@ export default function ResourcesPage() {
                             </CardHeader>
                         </Card>
                         {/* You can list your blog posts here with descriptions */}
-                        <ul className="space-y-12 text-gray-300 relative mt-5">
+                        <ul className="flex flex-col gap-5 text-gray-300 relative mt-5">
                             <li>
                                 <Link href="/blog/how-to-grow-umrah-company" className="text-lg text-teal-400 hover:text-teal-300 transition-colors">
                                     How to Get More People to Know About Your Umrah Company
