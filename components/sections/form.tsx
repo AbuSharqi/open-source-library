@@ -1,6 +1,5 @@
 import {
-    Layout, CheckCircle, ExternalLink, MessageCircle, Plus, ArrowRight,
-    Phone
+    CheckCircle, ExternalLink, ArrowRight,
 } from 'lucide-react';
 import { motion } from 'framer-motion'
 import DemoScreenshot from '@/lib/images/playbook-screenshot.png'
@@ -25,27 +24,10 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-type Identifier = {
-    type: "email" | "phone";
-    id: string;
-    channels: {
-        email?: {
-            status: string;
-        };
-        sms?: {
-            status: string;
-        };
-    };
-    email?: string;
-    phone?: string;
-};
-
 export default function FormSection() {
-    // State for general form inputs
     const [firstName, setFirstName] = useState<string>('');
     const [lastName, setLastName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
-    // Separate state for the country code and phone number
     const [countryCode, setCountryCode] = useState('+1');
     const [phoneNumber, setPhoneNumber] = useState('');
 
@@ -62,20 +44,16 @@ export default function FormSection() {
         }
     }, []);
 
-    // frontend
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
 
-        // Normalize and clean email and phone number
         const cleanedEmail = email.trim().toLowerCase();
         const fullPhoneNumber = `${countryCode}${phoneNumber.replace(/\D/g, '')}`;
 
-        // Regex for basic email format validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Check if both email and phone are empty
         const isEmailEmpty = !cleanedEmail;
         const isPhoneEmpty = fullPhoneNumber.trim() === countryCode.trim();
 
@@ -85,7 +63,6 @@ export default function FormSection() {
             return;
         }
 
-        // New: Error check for invalid email format
         if (!isEmailEmpty && !emailRegex.test(cleanedEmail)) {
             setError('Please enter a valid email address.');
             setIsLoading(false);
@@ -106,75 +83,34 @@ export default function FormSection() {
                 phone: fullPhoneNumber
             };
 
-            // NEW: Restructure the API payload to match the Mailchimp format.
-            // The Mailchimp API requires an email address and merge fields for first/last names.
-            // We'll also include the "tags" array as you had before.
-            const apiData = {
-                email_address: cleanedEmail,
-                status: "subscribed",
-                merge_fields: {
-                    FNAME: firstName,
-                    LNAME: lastName
-                },
-                tags: ["Playbook Lead"]
-            };
-
-            // No need for the complex Identifier type definition anymore.
-
-            console.log("Attempting to submit form data...");
+            console.log("Attempting to submit form data to Formspree...");
             console.log("Formspree Payload:", formspreeData);
-            // NEW: The payload sent to your backend now has the Mailchimp structure.
-            console.log("Mailchimp Payload:", apiData);
 
-            const [formspreeResponse, mailchimpResponse] = await Promise.all([
-                fetch("https://formspree.io/f/mvgqlngz", {
-                    method: "POST",
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formspreeData)
-                }),
-                // The fetch call to your backend endpoint remains the same.
-                fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(apiData),
-                })
-            ]);
+            // Fetch call to Formspree only
+            const formspreeResponse = await fetch("https://formspree.io/f/mvgqlngz", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formspreeData)
+            });
 
             console.log('Formspree response status:', formspreeResponse.status);
-            // NEW: Renamed for clarity.
-            console.log('Mailchimp API response status:', mailchimpResponse.status);
 
-            if (formspreeResponse.ok && mailchimpResponse.ok) {
+            if (formspreeResponse.ok) {
+                // Clear form inputs
                 setFirstName('');
                 setLastName('');
                 setEmail('');
                 setCountryCode('+1');
                 setPhoneNumber('');
+                // Set submitted state
                 setIsSubmitted(true);
+                // Save to localStorage
                 localStorage.setItem('formSubmitted2', 'true');
                 console.log("Form submission successful!");
             } else {
-                let combinedErrorMessage = 'Submission failed. Please try again.';
-                if (!formspreeResponse.ok) {
-                    const formspreeError = await formspreeResponse.json();
-                    console.error('Formspree error:', formspreeError);
-                    combinedErrorMessage += ` Formspree Error: ${formspreeError.error || 'Something went wrong.'}`;
-                }
-                if (!mailchimpResponse.ok) {
-                    const contentType = mailchimpResponse.headers.get("content-type");
-                    if (contentType && contentType.indexOf("application/json") !== -1) {
-                        // NEW: Renamed for clarity.
-                        const mailchimpError = await mailchimpResponse.json();
-                        console.error('Mailchimp API error:', mailchimpError);
-                        // NEW: Updated error message to reflect the new API.
-                        combinedErrorMessage += ` API Error: ${mailchimpError.title || 'Something went wrong.'}`;
-                    } else {
-                        const errorText = await mailchimpResponse.text();
-                        console.error('Mailchimp API non-JSON error:', errorText);
-                        combinedErrorMessage += ` API Error: Unexpected server response.`;
-                    }
-                }
-                setError(combinedErrorMessage);
+                const formspreeError = await formspreeResponse.json();
+                console.error('Formspree error:', formspreeError);
+                setError(`Submission failed. Formspree Error: ${formspreeError.error || 'Something went wrong.'}`);
             }
         } catch (error: any) {
             console.error('Form submission caught an unexpected error:', error);
@@ -250,8 +186,17 @@ export default function FormSection() {
                                                 Success! Your Playbook is Ready.
                                             </h3>
                                             <p className="text-gray-600 dark:text-gray-300 mb-6">
-                                                Thank you for your submission. Check your email for access to Your Playbook.
+                                                Thank you for your submission. You can download the playbook now.
                                             </p>
+                                            <Link
+                                                href="https://docs.google.com/document/d/1GwxIV7eFaHOOWRLdeNPBzVim7LZFjngydotdUrfqICU/edit?usp=sharing" // Replace with the actual path to your playbook file
+                                                className="w-full cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-gradient-to-r from-purple-600 to-teal-500 text-white hover:from-purple-700 hover:to-teal-600 h-11 px-6 py-3"
+                                                target='_blank'
+                                                download
+                                            >
+                                                <ExternalLink className="w-4 h-4 mr-2" />
+                                                Open Playbook
+                                            </Link>
                                         </div>
                                     </motion.div>
                                 ) : (
