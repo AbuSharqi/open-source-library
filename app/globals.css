@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  background-color: #FFFFFF; /* Default light mode background */
+  color: #000000; /* Default light mode text */
+}
+
+html.dark,
+body.dark {
+  background-color: #000000 !important; /* Force dark mode background */
+  color: #FFFFFF !important; /* Force dark mode text */
+}
+
 @keyframes gradient-shift {
   0% {
     background-position: 0% 50%;
@@ -62,8 +74,6 @@
 
 :root {
   --radius: 0.625rem;
-  background-color: #FFFFFF;
-  color: #000000;
   --background: #FFFFFF;
   --foreground: #000000;
   --card: #FFFFFF;
@@ -98,8 +108,6 @@
 }
 
 .dark {
-  background-color: #000000;
-  color: #FFFFFF;
   --background: #000000;
   --foreground: #FFFFFF;
   --card: #222222;
@@ -131,12 +139,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-}
-
-html.dark,
-body.dark {
-  background-color: #000000 !important;
-  color: #FFFFFF !important;
 }
 
 @media (prefers-color-scheme: dark) {

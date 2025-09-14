@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Github, Link } from 'lucide-react';
 import AuthorDate from '../ui/author-date';
 import ArabicLandingPageImage from '@/lib/images/arabic-landing-page.png'
-import ArabicLandingPage2Image from '@/lib/images/arabic-landing-page-2.png'
+import QuranLandingPageImage from '@/lib/images/quran-landing-page.png'
 
 interface GridItem {
     Image: string;
@@ -15,13 +15,13 @@ interface GridItem {
 
 const items: GridItem[] = [
     {
-        Image: ArabicLandingPageImage.src,
+        Image: QuranLandingPageImage.src,
         Title: "Landing Page for Quran Educators",
         WebsiteURL: "https://abusharqi.github.io/arabic-landing-page/",
         GithubURL: "https://github.com/AbuSharqi/arabic-landing-page",
     },
     {
-        Image: ArabicLandingPage2Image.src,
+        Image: ArabicLandingPageImage.src,
         Title: "Landing Page for Arabic Educators",
         WebsiteURL: "https://abusharqi.github.io/arabic-landing-page-2/",
         GithubURL: "https://github.com/AbuSharqi/arabic-landing-page-2",
