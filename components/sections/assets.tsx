@@ -17,14 +17,14 @@ const items: GridItem[] = [
     {
         Image: QuranLandingPageImage.src,
         Title: "Landing Page for Quran Educators",
-        WebsiteURL: "https://abusharqi.github.io/arabic-landing-page/",
-        GithubURL: "https://github.com/AbuSharqi/arabic-landing-page",
+        WebsiteURL: "https://abusharqi.github.io/arabic-landing-page-2/",
+        GithubURL: "https://github.com/AbuSharqi/arabic-landing-page-2",
     },
     {
         Image: ArabicLandingPageImage.src,
         Title: "Landing Page for Arabic Educators",
-        WebsiteURL: "https://abusharqi.github.io/arabic-landing-page-2/",
-        GithubURL: "https://github.com/AbuSharqi/arabic-landing-page-2",
+        WebsiteURL: "https://abusharqi.github.io/arabic-landing-page/",
+        GithubURL: "https://github.com/AbuSharqi/arabic-landing-page",
     }
 ];
 

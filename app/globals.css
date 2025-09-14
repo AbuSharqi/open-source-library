@@ -141,6 +141,12 @@ body.dark {
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+html.dark,
+body.dark {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
 @media (prefers-color-scheme: dark) {
   .gradient-text {
     background-image: linear-gradient(to right, #818cf8, #5eead4) !important;
