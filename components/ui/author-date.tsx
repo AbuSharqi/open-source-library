@@ -13,7 +13,7 @@ export default function AuthorDate({ dateTime, dateText }: { dateTime: string; d
             {/* Author Name and Date */}
             <div>
                 <p className="font-semibold text-white">
-                    Published by: <span className="text-teal-400">Abu Sharqi Ramadan</span>
+                    Last Updated by: <span className="text-teal-400">Abu Sharqi Ramadan</span>
                 </p>
                 <p className="text-sm">
                     <time dateTime={dateTime}>{dateText}</time>

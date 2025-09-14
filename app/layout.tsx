@@ -14,26 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Umrah & Hajj Company Marketing Solutions | Yusr Solutions",
-  description: "Transform your online presence and attract more pilgrims. We offer digital marketing, website, and social media solutions for Umrah and Hajj travel agencies, hotels, and taxi companies, Insha'Allah.",
-  keywords: ["Umrah marketing", "Hajj marketing", "travel agency marketing", "pilgrim booking", "Islamic marketing", "digital marketing for Umrah", "Hajj company marketing", "Makkah hotel marketing", "Islamic travel"],
+  title: "Open-Source Resources for Educators",
+  description: "Explore some ready-to-use tools and content to inspire your students, in sha Allah.",
+  keywords: ["open-source education", "educator resources", "free teaching tools", "educational content", "teacher open source", "learning materials", "Islamic education"],
   openGraph: {
-    title: "Umrah & Hajj Company Marketing Solutions",
-    description: "Transform your online presence and attract more pilgrims. Get your free playbook now.",
+    title: "Open-Source for Educators | Free Resources to Empower Teaching",
+    description: "Unlock your teaching potential with our free, open-source resources designed for educators. Explore ready-to-use tools and content to inspire your students, Insha'Allah.",
     url: "https://www.yourdomain.com", // Replace with your actual domain
     type: "website",
     images: [
       {
-        url: '/lib/images/playbook-screenshot.png', // Create a specific image for social sharing
-        alt: "A graphic representing digital marketing for Umrah and Hajj companies.",
+        url: '/lib/images/arabic-landing-page.png', // Create a specific image for social sharing
+        alt: "A graphic representing open-source educational resources.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Umrah & Hajj Company Marketing Solutions",
-    description: "Transform your online presence and attract more pilgrims. Get your free playbook now.",
-    images: ["/lib/images/playbook-screenshot.png"], // Ensure this image is high-quality
+    title: "Open-Source for Educators | Free Resources to Empower Teaching",
+    description: "Unlock your teaching potential with our free, open-source resources designed for educators. Explore ready-to-use tools and content to inspire your students, Insha'Allah.",
+    images: ["/lib/images/arabic-landing-page.png"], // Ensure this image is high-quality
   },
 };
 

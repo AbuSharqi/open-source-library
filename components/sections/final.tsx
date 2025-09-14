@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react';
-import Cal, { getCalApi } from "@calcom/embed-react";
 import { Button } from '../ui/button';
 import { MessageCircle, Calendar, ChevronDown, Mail, BadgeCheck, Info, Compass, Heart } from 'lucide-react';
 import {
     XCircle, CheckCircle, DollarSign, Clock, AlertCircle, Turtle,
     ShieldOff, Headphones, Zap, Search, PiggyBank, Gauge, Code,
-    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight, Check, Share2, Volume2
+    LifeBuoy, ArrowRight, EyeOff, MessageSquare, UserX, Award, CreditCard, Users, Globe, ArrowUpRight, Check, Share2, Volume2, Instagram
 } from 'lucide-react';
 import {
     LayoutTemplate,
@@ -55,17 +54,11 @@ const icons = {
     CreditCard: CreditCard,
     Users: Users,
     Globe: Globe,
-    Volume2: Volume2
+    Volume2: Volume2,
+    Instagram: Instagram,
 }
 
 export default function FinalSection() {
-    useEffect(() => {
-        (async function () {
-            const cal = await getCalApi({ "namespace": "planning-session" });
-            cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
-        })();
-    }, [])
-
     return (
         <motion.section
             className="mx-auto w-full rounded-xl shadow-xl p-8 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700"
@@ -102,11 +95,8 @@ export default function FinalSection() {
                         >
                             {/* Section header */}
                             <div className="mb-10">
-                                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                                    Need a hand? We're here for you.
-                                </h3>
                                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                                    If you ever get stuck figuring out your playbook, or just need some help with your next move, we'd love to assist. We can work with you to create a plan that fits your agency's unique needs, inSha'Allah.
+                                    I'd love to help you understand and utilize these open-sourced assets. Feel free to reach out!
                                 </p>
                             </div>
 
@@ -125,40 +115,23 @@ export default function FinalSection() {
                             </motion.div>
 
                             {/* Contact options */}
-                            <div className="flex flex-col items-center gap-6 mb-4 mt-4 max-w-4xl mx-auto">
-                                {/* Book Call */}
+                            <div className="flex flex-col items-center gap-6 mb-10 mt-10 max-w-4xl mx-auto">
+                                {/* Instagram CTA */}
                                 <motion.div
                                     className="w-full lg:w-1/2 flex flex-col items-center"
-                                    whileHover={{ y: -2 }}
+                                    whileHover={{ y: -1 }}
                                 >
-                                    <p className="mt-2 text-md text-gray-500 dark:text-gray-400 text-center">Below is where you can book your meeting ان شاء الله</p>
-                                    <p className="mt-2 text-md text-gray-500 dark:text-gray-400 text-center">If this is loading, please be patient</p>
+                                    <a
+                                        href="https://www.instagram.com/abu.sharqi/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="cursor-pointer bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center"
+                                    >
+                                        <Instagram className="w-6 h-6 mr-3" />
+                                        <span>Reach out to me on Instagram!</span>
+                                        <ArrowRight className="w-5 h-5 ml-3" />
+                                    </a>
                                 </motion.div>
-                            </div>
-
-
-                            <Cal namespace="planning-session"
-                                calLink="yusr.solutions/planning-session"
-                                style={{ width: "100%", height: "100%", overflow: "scroll" }}
-                                config={{ "layout": "month_view" }}
-                            />
-
-                            {/* Benefits footer */}
-                            <div className="mt-0 mb-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 max-w-2xl mx-auto">
-                                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                                    <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
-                                        <ArrowRight className="w-5 h-5" />
-                                        <span>Connect with Us</span>
-                                    </div>
-                                    <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
-                                        <ArrowRight className="w-5 h-5" />
-                                        <span>Bring Traffic</span>
-                                    </div>
-                                    <div className="text-emerald-800 dark:text-emerald-200 font-bold flex items-center gap-2">
-                                        <ArrowRight className="w-5 h-5" />
-                                        <span>Scale your Agency</span>
-                                    </div>
-                                </div>
                             </div>
 
                             <h1 className='font-bold text-emerald-200 mt-10 text-2xl'>

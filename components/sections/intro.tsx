@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import AuthorDate from '../ui/author-date';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,19 +31,19 @@ export default function IntroSection() {
         <>
             {/* Value Proposition Section */}
             <motion.section
-                className="mx-auto flex flex-col gap-8 py-0 px-4 w-full"
+                className="mx-auto flex flex-col gap-8 px-4 w-full"
                 variants={containerVariants}
                 aria-labelledby="main-heading"
             >
                 <div className="text-center">
-                    <motion.h1
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="leading-[3] py-1 align-bottom inline-block md:block text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500"
+                        className="py-2 leading-[3] text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-300 to-emerald-400"
                     >
-                        Umrah & Hajj Company Marketing Solutions
-                    </motion.h1>
+                        This is your moment to grow.
+                    </motion.h2>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +51,10 @@ export default function IntroSection() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-                        Discover the digital marketing solutions for Umrah & Hajj service providers, from <span className='font-bold'>travel agencies to hotels and taxi companies</span>, who want to transform their <span className='font-bold'>online presence</span> to attract more <span className='font-bold'>pilgrims</span> and get <span className='font-bold'>direct bookings, Insha'Allah.</span>
+                            See what works for you - landing pages I've built for different educator niches. Take what you need, make changes as needed.
+                        </p>
+                        <p className="text-md text-gray-100 max-w-2xl mx-auto mt-5 font-bold">
+                           (Don't worry if your niche is not present, you can always work with what's available and customize it to fit your needs!)
                         </p>
                     </motion.div>
                 </div>
