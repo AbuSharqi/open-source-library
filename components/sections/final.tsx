@@ -127,7 +127,7 @@ export default function FinalSection() {
                                         rel="noopener noreferrer"
                                         className="cursor-pointer bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center"
                                     >
-                                        <Instagram className="w-6 h-6 mr-3" />
+                                        <Instagram className="w-16 h-16 lg:w-6 lg:h-6 mr-3" />
                                         <span>Reach out to me on Instagram!</span>
                                         <ArrowRight className="w-5 h-5 ml-3" />
                                     </a>
