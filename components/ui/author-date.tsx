@@ -4,7 +4,7 @@ import NoelImage from '@/lib/images/Showcase-CEO.png'
 
 export default function AuthorDate({ dateTime, dateText }: { dateTime: string; dateText: string }) {
     return (
-        <div className="mx-auto flex items-center gap-4 text-gray-400 mt-10">
+        <div className="mx-auto flex items-center gap-4 text-gray-400 mb-5">
             {/* Author's Avatar or Initials */}
             <Avatar className="w-10 h-10">
                 <AvatarImage src={NoelImage.src} alt="Abu Sharqi Ramadan" />

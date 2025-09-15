@@ -99,6 +99,10 @@ export default function AssetsSection() {
                     variants={containerVariants}
                     aria-labelledby="main-heading"
                 >
+                    <AuthorDate
+                        dateTime={"2025-09-15"}
+                        dateText={"September 9th, 2025"}
+                    />
                     <div className="text-center w-full">
                         {/* Project Grid */}
                         <motion.div

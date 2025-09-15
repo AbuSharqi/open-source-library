@@ -40,9 +40,9 @@ export default function IntroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="py-2 leading-[3] text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-300 to-emerald-400"
+                        className="py-2 leading-[2] text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-300 to-emerald-400"
                     >
-                        This is your moment to grow.
+                        This is your moment to grow, باذن الله.
                     </motion.h2>
 
                     <motion.div
